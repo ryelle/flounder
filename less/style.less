@@ -1,0 +1,56 @@
+/*! 
+ * Theme Name: Flounder
+ * Theme URI: 
+ * Author: Kelly Dwan & Mel Choyce
+ * Description: Bloggy Theme! 
+ * Version: 0.1.0
+ * License: GNU General Public License 
+ * License URI: license.txt 
+ */
+
+@import '_reset';
+@import '_base';
+//@import '_menu';
+
+@bg: #2c3e50;
+
+body {
+	background: #eee;//@bg;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	color: @bg;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+/* @group STRUCTURE */
+#page {
+	margin: 1em auto 0;
+	max-width: 960px;
+}
+.content-area {
+	float: right;
+	margin: 0 0 0 -25%;
+	width: 100%;
+}
+.site-content {
+	margin: 0 0 0 25%;
+}
+.site-header,
+.side-widget-area {
+	float: left;
+	overflow: hidden;
+	width: 25%;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+/* @end */
