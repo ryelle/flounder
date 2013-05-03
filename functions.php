@@ -93,6 +93,8 @@ add_action( 'widgets_init', 'flounder_widgets_init' );
  * Enqueue scripts and styles
  */
 function flounder_scripts() {
+	wp_enqueue_style( 'flounder-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,200italic,400italic,600italic' );
+	wp_enqueue_style( 'dashicons', get_template_directory_uri().'/fonts/dashicons.css' );
 	wp_enqueue_style( 'flounder-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'flounder-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

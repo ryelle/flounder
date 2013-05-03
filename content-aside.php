@@ -6,8 +6,28 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-area">
-		<header class="entry-header">
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<header class="entry-header entry-meta">
+			<?php flounder_posted_on(); ?>
+			<?php flounder_posted_by(); ?>
+			<?php
+				/* translators: used between list items, there is a space after the comma */
+				$categories_list = get_the_category_list( __( ', ', 'flounder' ) );
+				if ( $categories_list ) :
+			?>
+			<div class="meta cat-links">
+				<?php echo $categories_list; ?>
+			</div>
+			<?php endif; // End if categories ?>
+
+			<?php
+				/* translators: used between list items, there is a space after the comma */
+				$tags_list = get_the_tag_list( '', __( ', ', 'flounder' ) );
+				if ( $tags_list ) :
+			?>
+			<div class="meta tags-links">
+				<?php echo $tags_list; ?>
+			</div>
+			<?php endif; // End if $tags_list ?>
 		</header><!-- .entry-header -->
 	
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -30,27 +50,6 @@
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<i class="format-icon"></i>
-			<?php flounder_posted_on(); ?>
-			<?php flounder_posted_by(); ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'flounder' ) );
-				if ( $categories_list ) :
-			?>
-			<div class="meta cat-links">
-				<?php echo $categories_list; ?>
-			</div>
-			<?php endif; // End if categories ?>
-
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'flounder' ) );
-				if ( $tags_list ) :
-			?>
-			<div class="meta tags-links">
-				<?php echo $tags_list; ?>
-			</div>
-			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

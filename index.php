@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php flounder_content_nav( 'nav-below' ); ?>
+			<?php //flounder_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 

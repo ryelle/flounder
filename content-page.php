@@ -20,5 +20,5 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'flounder' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'flounder' ), '<footer class="entry-meta"><div class="meta edit-link">', '</div></footer>' ); ?>
 </article><!-- #post-## -->
