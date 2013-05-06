@@ -25,11 +25,13 @@
 			?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
+		<?php flounder_comment_link( '<div class="comment-links">', '</div>' ); ?>
+
 	</div><!-- .entry-area -->
 
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<i class="format-icon"></i>
+			<i class="icon format-icon"></i>
 			<?php flounder_posted_on(); ?>
 			<?php flounder_posted_by(); ?>
 			<?php

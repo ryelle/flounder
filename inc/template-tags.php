@@ -132,3 +132,35 @@ function flounder_posted_by() {
 	);
 }
 endif;
+
+if ( ! function_exists( 'flounder_comment_link' ) ) :
+function flounder_comment_link( $before = '', $after = '', $echo = true ) {
+	if ( ! comments_open() ) return;
+	ob_start();
+	if ( ! empty( $before ) )
+		echo $before;
+	comments_popup_link( '<i class="icon no-bg"></i>'.__( 'No comments', 'flounder' ), '<i class="icon no-bg"></i>'.__( 'Read 1 Comment', 'flounder' ), '<i class="icon no-bg"></i>'.__( 'Read % Comments', 'flounder' ), 'read alignleft', '' );
+	echo '<a href="#" class="add alignright"><i class="icon"></i>Add a comment</a>';
+	if ( ! empty( $after ) )
+		echo $after;
+	if ( $echo ) 
+		ob_end_flush();
+	else 
+		return ob_end_clean();
+}
+endif;
+
+function flounder_show_title() {
+	$show_title = ( ! post_type_supports( get_post_type(), 'post-formats' ) ) || ! (
+		has_post_format( 'link' ) ||
+		has_post_format( 'quote' ) ||
+		has_post_format( 'aside' ) ||
+		has_post_format( 'status' )
+	);
+	
+	return apply_filters( 'flounder_show_title', $show_title );
+}
+
+
+
+
