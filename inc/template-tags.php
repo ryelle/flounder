@@ -75,34 +75,36 @@ function flounder_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
+			<div class="comment-avatar">
+				<?php echo get_avatar( $comment, 65 ); ?>
+			</div><!-- .comment-avatar -->
+			<div class="comment-content"><?php comment_text(); ?></div>
 			<footer>
 				<div class="comment-author vcard">
-					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'flounder' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+					<?php 
+					if ( current_time('timestamp') - get_comment_time( 'U' ) > 604800 )
+						$time = sprintf( _x( '%1$s at %2$s', '1: date, 2: time', 'flounder' ), get_comment_date(), get_comment_time() );
+					else
+						$time = sprintf( __( '%1$s ago', 'flounder' ), human_time_diff( get_comment_time( 'U' ), current_time('timestamp') ) );
+					printf( __( 'posted %1$s by %2$s', 'flounder' ), 
+						'<time datetime="'. get_comment_time( 'c' ) .'">'. $time .'</time>',
+						sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) 
+					); ?>
+					</a>
+					<?php
+						comment_reply_link( array_merge( $args, array(
+							'depth'     => $depth,
+							'max_depth' => $args['max_depth'],
+							'before'    => '<span class="alignright">',
+							'after'     => '</span>',
+						) ) );
+					?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em><?php _e( 'Your comment is awaiting moderation.', 'flounder' ); ?></em>
-					<br />
 				<?php endif; ?>
-
-				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
-					<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'flounder' ), get_comment_date(), get_comment_time() ); ?>
-					</time></a>
-					<?php edit_comment_link( __( 'Edit', 'flounder' ), '<span class="edit-link">', '<span>' ); ?>
-				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
-
-			<div class="comment-content"><?php comment_text(); ?></div>
-
-			<div class="reply">
-			<?php
-				comment_reply_link( array_merge( $args,array(
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-				) ) );
-			?>
-			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 
 	<?php
@@ -139,8 +141,8 @@ function flounder_comment_link( $before = '', $after = '', $echo = true ) {
 	ob_start();
 	if ( ! empty( $before ) )
 		echo $before;
-	comments_popup_link( '<i class="icon no-bg"></i>'.__( 'No comments', 'flounder' ), '<i class="icon no-bg"></i>'.__( 'Read 1 Comment', 'flounder' ), '<i class="icon no-bg"></i>'.__( 'Read % Comments', 'flounder' ), 'read alignleft', '' );
-	echo '<a href="#" class="add alignright"><i class="icon"></i>Add a comment</a>';
+	comments_popup_link( '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'No comments', 'flounder' ), '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'Read 1 Comment', 'flounder' ), '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'Read % Comments', 'flounder' ), 'read alignleft', '' );
+	echo '<a href="#" class="add alignright"><i class="icon dashicons dashicons-plus-big"></i>Add a comment</a>';
 	if ( ! empty( $after ) )
 		echo $after;
 	if ( $echo ) 

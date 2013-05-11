@@ -25,7 +25,14 @@
 			?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
-		<?php flounder_comment_link( '<div class="comment-links">', '</div>' ); ?>
+
+		<?php if ( is_singular() ) {
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || '0' != get_comments_number() )
+				comments_template();
+		} else {
+			flounder_comment_link( '<div class="comment-links">', '</div>' ); 
+		} ?>
 
 	</div><!-- .entry-area -->
 
