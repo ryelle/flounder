@@ -69,7 +69,12 @@ function flounder_setup() {
 	/**
 	 * Enable support for Post Formats
 	 */
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video', 'quote', 'link' ) );
+	add_theme_support( 'structured-post-formats', array( 'aside', 'gallery', 'image', 'video', 'quote', 'link' )  );
+	
+	/**
+	 * Add an image size that does not exceed content width
+	 */
+	add_image_size( 'feature', 500 );
 }
 endif; // flounder_setup
 add_action( 'after_setup_theme', 'flounder_setup' );
@@ -94,7 +99,7 @@ add_action( 'widgets_init', 'flounder_widgets_init' );
  */
 function flounder_scripts() {
 	wp_enqueue_style( 'flounder-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,200italic,400italic,600italic' );
-	wp_enqueue_style( 'dashicons', get_template_directory_uri().'/fonts/dashicons.css' );
+	wp_enqueue_style( 'dashicons', get_template_directory_uri().'/assets/fonts/dashicons.css' );
 	wp_enqueue_style( 'flounder-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'flounder-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

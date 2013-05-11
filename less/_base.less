@@ -24,7 +24,7 @@ p {
 	margin-bottom: 1em;
 }
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1em 2em;
 }
 ul {
 	list-style: disc;
@@ -35,13 +35,13 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 1em;
 }
 dt {
 	font-weight: bold;
 }
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 1em 1em;
 }
 b, strong {
 	font-weight: bold;
@@ -50,10 +50,10 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 1em;
 }
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 1em;
 }
 pre {
 	background: #eee;
@@ -61,8 +61,8 @@ pre {
 	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.6;
-	margin-bottom: 1.6em;
-	padding: 1.6em;
+	margin-bottom: 1em;
+	padding: 1em;
 	overflow: auto;
 	max-width: 100%;
 }
@@ -244,31 +244,22 @@ textarea {
 }
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin: 1.2% auto 0;
-	max-width: 98%;
-}
-.wp-caption-text {
-	text-align: center;
-}
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	max-width: 100%;
 }
 .site-content .gallery {
 	margin-bottom: 1.5em;
 }
-.gallery-caption {
-}
-.site-content .gallery a img {
-	border: none;
+.site-content .gallery img {
+	display: block;
+	margin: 0 auto;
 	height: auto;
-	max-width: 90%;
+	border: none;
 }
 .site-content .gallery dd {
 	margin: 0;
 }
-.site-content .gallery-columns-4 .gallery-item {
-}
-.site-content .gallery-columns-4 .gallery-item img {
+.entry-format-image img {
+	display: block;
 }
 
 /* Make sure embeds and iframes fit their containers */

@@ -6,9 +6,18 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-area">
+		<?php if ( flounder_show_title() ) : ?>
 		<header class="entry-header">
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		</header><!-- .entry-header -->
+		<?php else: ?>
+		<header class="entry-header entry-meta">
+			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+				<?php flounder_posted_on(); ?>
+			</a>
+			<?php flounder_posted_by(); ?>
+		</header><!-- .entry-header -->
+		<?php endif; ?>
 	
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
@@ -37,8 +46,8 @@
 	</div><!-- .entry-area -->
 
 	<footer class="entry-meta">
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<i class="icon format-icon"></i>
+		<i class="icon format-icon dashicons dashicons-format-<?php echo ( ''==get_post_format() )? 'standard': get_post_format(); ?>"></i>
+		<?php if ( flounder_show_title() ) : // If we show the title, we need to put meta here. ?>
 			<?php flounder_posted_on(); ?>
 			<?php flounder_posted_by(); ?>
 			<?php
@@ -60,6 +69,6 @@
 				<?php echo $tags_list; ?>
 			</div>
 			<?php endif; // End if $tags_list ?>
-		<?php endif; // End if 'post' == get_post_type() ?>
+		<?php endif; // End if flounder_show_title ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

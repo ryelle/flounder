@@ -19,7 +19,8 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<p class="entry-format-link"><a href="<?php the_post_format_url(); ?>" rel="bookmark"><?php the_title(); ?></a></p>
+			<div class="entry-format-image"><?php the_post_format_image( 'feature' ); ?></div>
+			
 			<?php the_remaining_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'flounder' ) ); ?>
 			<?php
 				wp_link_pages( array(
