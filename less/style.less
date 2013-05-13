@@ -114,7 +114,9 @@ h2 {
 	display: block;
 	margin: 0 0 2px;
 	padding: 15px 30px;
-	.font-meta;
+	font-size: 12px;
+	font-size: 1.2rem;
+	.small-caps;
 }
 .entry-header {
 	.clearfix;
@@ -134,7 +136,9 @@ h2 {
 }
 .comment-links {
 	.clearfix;
-	.font-meta;
+	font-size: 12px;
+	font-size: 1.2rem;
+	.small-caps;
 	.icon {
 		float: left;
 		margin-top: 2px;
@@ -142,28 +146,36 @@ h2 {
 	}
 }
 
-.entry-format-link {
+.entry-link {
 	color: @link-base;
 	font-weight: bold;
 }
 
-.entry-format-image {
+.entry-image {
 	background: lighten( @image-base, 15% );
 	.wp-caption-text {
 		color: saturate( darken( @image-base, 20% ), 23%);
 	}
 }
 
-.gallery {
+.format-gallery .gallery {
+	br { display: none; }
+	.gallery-item:nth-child(1),
+	.gallery-item:nth-child(2) {
+		width: 50% !important;
+	}
+	.gallery-item:nth-child(3) {
+		clear: left;
+	}
 	.wp-caption-text {
 		display: none;
 		margin: 0 5px !important;
 		padding: 10px 5px;
 		color: saturate( darken( @gallery-base, 20% ), 23%);
 		background: lighten( @gallery-base, 15% );
-	}
-	.single & .wp-caption-text {
-		display: block;
+		.single & {
+			display: block;
+		}
 	}
 	img {
 		-webkit-box-sizing: border-box;
@@ -173,6 +185,32 @@ h2 {
 		border: none !important;
 	}
 }
+
+.format-quote {
+	blockquote {
+		position: relative;
+		margin: 0 20px;
+		font-size: 20px;
+		font-size: 2.0rem;
+		line-height: 30px;
+		font-style: italic;
+		p:first-child {
+			quotes: '"' '';
+			&:before { content: open-quote }
+		}
+		p:last-child { 
+			quotes: '' '"';
+			&:after { content: close-quote }
+		}
+	}
+	.quote-caption {
+		margin: 0 20px;
+		.small-caps;
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+}
+
 /* @end */
 
 /* @group COLORS & ICONS */
@@ -276,6 +314,10 @@ h1, h2, h3 {
 }
 .format-aside {
 	.colors( @aside, @aside-base );
+}
+.type-page,
+.error404 {
+	.colors( @widget, @widget-header );
 }
 /* @end */
 

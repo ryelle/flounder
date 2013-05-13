@@ -68,3 +68,20 @@ function flounder_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'flounder_wp_title', 10, 2 );
+
+
+/**
+ * Sets the image size in featured galleries to medium.
+ *
+ * @since Flounder 1.0
+ *
+ * @param array $atts Combined and filtered attribute list.
+ * @return array
+ */
+function flounder_gallery_atts( $atts ) {
+	if ( has_post_format( 'gallery' ) )
+		$atts['size'] = 'medium';
+
+	return $atts;
+}
+add_filter( 'shortcode_atts_gallery', 'flounder_gallery_atts' );

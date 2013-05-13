@@ -19,14 +19,10 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<p class="entry-link"><a href="<?php the_post_format_url(); ?>" rel="bookmark"><?php the_title(); ?></a></p>
-			<?php the_remaining_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'flounder' ) ); ?>
-			<?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'flounder' ),
-					'after'  => '</div>',
-				) );
-			?>
+			<?php the_post_format_quote(); ?>
+			<?php if ( is_singular() ) : ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'flounder' ), 'after'  => '</div>', ) ); ?>
+			<?php endif; ?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 

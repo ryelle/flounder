@@ -16,15 +16,9 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<div class="entry-image"><?php the_post_format_image( 'feature' ); ?></div>
+			<?php the_post_format_chat(); ?>
 			<?php if ( is_singular() ) : ?>
-			<?php the_remaining_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'flounder' ) ); ?>
-			<?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'flounder' ),
-					'after'  => '</div>',
-				) );
-			?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'flounder' ), 'after'  => '</div>', ) ); ?>
 			<?php endif; ?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
