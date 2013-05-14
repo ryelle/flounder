@@ -65,9 +65,16 @@ if ( post_password_required() )
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'flounder' ); ?></p>
+		<h2 class="no-comments"><i class="icon no-bg dashicons dashicons-xit"></i><?php _e( 'Comments are closed.', 'flounder' ); ?></h2>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form( array(
+		// 'fields' => taken care of by flounder_comment_fields in extras.php
+		'comment_notes_before' => '',
+		'comment_notes_after' => '',
+		'title_reply' => '<i class="icon dashicons dashicons-plus-big"></i>'.__( 'Leave a Reply' ),
+		'title_reply_to' => '<i class="icon dashicons dashicons-plus-big"></i>'.__( 'Leave a Reply to %s' ),
+		'comment_field' => '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="3" aria-required="true" placeholder="'. __( 'Enter your comment here&hellip;', 'flounder' ) .'"></textarea></p>',
+	) ); ?>
 
 </div><!-- #comments -->

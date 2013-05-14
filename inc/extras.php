@@ -85,3 +85,30 @@ function flounder_gallery_atts( $atts ) {
 	return $atts;
 }
 add_filter( 'shortcode_atts_gallery', 'flounder_gallery_atts' );
+
+/**
+ * Unset the website field
+ */
+function flounder_comment_fields( $fields ){
+	unset( $fields['url'] );
+	$fields['author'] = str_replace( '<span class="required">*</span>', '', $fields['author'] );
+	$fields['email'] = str_replace( '<span class="required">*</span>', '', $fields['email'] );
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'flounder_comment_fields' );
+
+/**
+ * Add a wrapper to the name/email fields
+ */
+function flounder_comment_form_top() {
+	echo '<div id="comment-info-fields">';
+}
+add_action( 'comment_form_top', 'flounder_comment_form_top' );
+
+function flounder_comment_form_after() {
+	echo '</div>';
+}
+add_action( 'comment_form_logged_in_after', 'flounder_comment_form_after' );
+add_action( 'comment_form_after_fields', 'flounder_comment_form_after' );
+
+

@@ -11,6 +11,25 @@
 	}
 }
 
+.placeholder( @color, @font ) {
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    font: @font;
+    color: @color;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font: @font;
+    color: @color;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font: @font;
+    color: @color;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    font: @font;
+    color: @color;
+  }
+}
+
 // Clearfix
 // --------
 // For clearing floats like a boss h5bp.com/q

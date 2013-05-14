@@ -83,6 +83,7 @@ function flounder_comment( $comment, $args, $depth ) {
 				<div class="comment-author vcard">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 					<?php 
+					// Older than a week, show date; otherwise show __ time ago.
 					if ( current_time('timestamp') - get_comment_time( 'U' ) > 604800 )
 						$time = sprintf( _x( '%1$s at %2$s', '1: date, 2: time', 'flounder' ), get_comment_date(), get_comment_time() );
 					else
@@ -93,6 +94,13 @@ function flounder_comment( $comment, $args, $depth ) {
 					); ?>
 					</a>
 					<?php
+						if ( $comment->comment_parent ) {
+							printf ( 
+								'<a href="%1$s">%2$s</a>',
+								esc_url( get_comment_link( $comment->comment_parent ) ),
+								sprintf( __( 'in reply to %s', 'flounder' ), get_comment_author( $comment->comment_parent ) )
+							);
+						}
 						comment_reply_link( array_merge( $args, array(
 							'depth'     => $depth,
 							'max_depth' => $args['max_depth'],
