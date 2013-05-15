@@ -18,10 +18,10 @@ get_header(); ?>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
-							printf( __( 'Category Archives: %s', 'flounder' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+							printf( __( 'Archives: %s', 'flounder' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 						elseif ( is_tag() ) :
-							printf( __( 'Tag Archives: %s', 'flounder' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+							printf( __( 'Archives: %s', 'flounder' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 						elseif ( is_author() ) :
 							/* Queue the first post, that way we know
@@ -36,13 +36,13 @@ get_header(); ?>
 							rewind_posts();
 
 						elseif ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'flounder' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Archives: %s', 'flounder' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'flounder' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+							printf( __( 'Archives: %s', 'flounder' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'flounder' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+							printf( __( 'Archives: %s', 'flounder' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 							_e( 'Asides', 'flounder' );
