@@ -22,20 +22,21 @@ get_header(); ?>
 	
 						<?php get_search_form(); ?>
 	
-						<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+						<?php the_widget( 'WP_Widget_Recent_Posts', '',"before_title=<h2 class='widget-title'>" ); ?>
 	
 						<?php
 						/* translators: %1$s: smiley */
 						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'flounder' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "before_title=<h2 class='widget-title'>&after_title=</h2>$archive_content" );
 						?>
 	
-						<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+						<?php the_widget( 'WP_Widget_Tag_Cloud', '', "before_title=<h2 class='widget-title'>" ); ?>
 	
 					</div><!-- .entry-content -->
 				
 				</div><!-- .entry-area -->
-				
+
+				<div class="entry-meta sidebar-bg"></div>
 				<footer class="entry-meta">
 					<i class="icon format-icon dashicons dashicons-tinymce-help"></i>
 				</footer><!-- .entry-meta -->

@@ -10,18 +10,12 @@
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		</header><!-- .entry-header -->
 	
-		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
-		<?php else : ?>
 		<div class="entry-content">
 			<?php the_post_format_chat(); ?>
 			<?php if ( is_singular() ) : ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'flounder' ), 'after'  => '</div>', ) ); ?>
 			<?php endif; ?>
 		</div><!-- .entry-content -->
-		<?php endif; ?>
 
 		<?php if ( is_singular() ) {
 			// If comments are open or we have at least one comment, load up the comment template
@@ -33,6 +27,7 @@
 
 	</div><!-- .entry-area -->
 
+	<div class="entry-meta sidebar-bg"></div>
 	<footer class="entry-meta">
 		<i class="icon format-icon dashicons dashicons-format-<?php echo ( ''==get_post_format() )? 'standard': get_post_format(); ?>"></i>
 		<?php flounder_posted_on(); ?>

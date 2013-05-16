@@ -42,17 +42,34 @@
 	margin: 0 26.4705882% 0 0;
 	padding: 20px 30px;
 }
+.type-page {
+	.entry-header {
+		position: relative;
+		margin: 0;
+		padding-right: 26.4705882%;
+		z-index: 100;
+	}
+}
 .comment-links {
 	padding-top: 0;
 }
-footer.entry-meta {
+.entry-content .searchform {
+	margin: 0 0 15px;
+}
+.sidebar-bg {
 	position: absolute;
-	overflow: hidden;
-	width: 26.4705882%;
-	padding-bottom: 30px;
 	top: 0;
 	right: 0;
 	bottom: 0;
+	width: 26.4705882%;
+	background: red;
+}
+footer.entry-meta {
+	position: relative;
+	overflow: hidden;
+	z-index: 50;
+	width: 26.4705882%;
+	padding-bottom: 30px;
 }
 
 .site-footer {

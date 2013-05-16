@@ -7,11 +7,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<h1 class="entry-title"><?php the_title(); ?></h1>
+	</header><!-- .entry-header -->
+
 	<div class="entry-area">
-		<header class="entry-header">
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-		</header><!-- .entry-header -->
-	
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php
@@ -21,6 +21,13 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
+		
+		<?php
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || '0' != get_comments_number() )
+				comments_template();
+		?>
+		
 	</div>
-	<footer class="entry-meta"></footer>
+	<div class="entry-meta sidebar-bg"></div>
 </article><!-- #post-## -->

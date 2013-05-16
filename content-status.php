@@ -13,11 +13,6 @@
 			<?php flounder_posted_by(); ?>
 		</header><!-- .entry-header -->
 	
-		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
-		<?php else : ?>
 		<div class="entry-content">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'flounder' ) ); ?>
 			<?php
@@ -27,7 +22,6 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
-		<?php endif; ?>
 
 		<?php if ( is_singular() ) {
 			// If comments are open or we have at least one comment, load up the comment template
@@ -39,6 +33,7 @@
 
 	</div><!-- .entry-area -->
 
+	<div class="entry-meta sidebar-bg"></div>
 	<footer class="entry-meta">
 		<i class="icon format-icon dashicons dashicons-format-<?php echo ( ''==get_post_format() )? 'standard': get_post_format(); ?>"></i>
 	</footer><!-- .entry-meta -->
