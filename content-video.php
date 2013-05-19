@@ -28,7 +28,7 @@
 			if ( comments_open() || '0' != get_comments_number() )
 				comments_template();
 		} else {
-			flounder_comment_link( '<div class="comment-links">', '</div>' ); 
+			flounder_comment_link( '<div class="comment-links clearfix">', '</div>' ); 
 		} ?>
 
 	</div><!-- .entry-area -->

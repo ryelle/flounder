@@ -1,6 +1,6 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
+ * Custom Header support
  * http://codex.wordpress.org/Custom_Headers
  *
  * You can add an optional custom header image to header.php like so ...
@@ -35,10 +35,10 @@
 function flounder_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
-		'default-text-color'     => '000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
+		'default-text-color'     => '2c3e50',
+		'width'                  => 220,
+		'height'                 => 220,
+		'flex-height'            => false,
 		'wp-head-callback'       => 'flounder_header_style',
 		'admin-head-callback'    => 'flounder_admin_header_style',
 		'admin-preview-callback' => 'flounder_admin_header_image',
@@ -91,10 +91,10 @@ if ( ! function_exists( 'flounder_header_style' ) ) :
  * @see flounder_custom_header_setup().
  */
 function flounder_header_style() {
-
+	$header_image = get_header_image();
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	if ( HEADER_TEXTCOLOR == get_header_textcolor() && empty( $header_image ) )
 		return;
 	// If we get this far, we have custom styles. Let's do this.
 	?>
@@ -118,10 +118,25 @@ function flounder_header_style() {
 			color: #<?php echo get_header_textcolor(); ?>;
 		}
 	<?php endif; ?>
+	<?php if ( ! empty( $header_image ) ) : ?>
+		.site-branding:before {
+			background-image: url('<?php echo esc_url( $header_image ); ?> ');
+		}
+	<?php endif; ?>
 	</style>
 	<?php
 }
 endif; // flounder_header_style
+
+if ( ! function_exists( 'flounder_add_custom_header_class' ) ) :
+function flounder_add_custom_header_class( $classes ) {
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) )
+		$classes[] = 'custom-header';
+	return $classes;
+}
+endif; // flounder_add_custom_header_class
+add_filter( 'body_class', 'flounder_add_custom_header_class' );
 
 if ( ! function_exists( 'flounder_admin_header_style' ) ) :
 /**
@@ -134,17 +149,44 @@ function flounder_admin_header_style() {
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
 		border: none;
+		position: relative;
+		z-index: -1;
+		background: #2c3e50;
 	}
-	#headimg h1,
-	#desc {
+	.site-branding {
+		position: relative;
+		margin: 30px;
+		height: 220px;
+		width: 220px;
+		line-height: 220px;
+		text-align: center;
+		border-radius: 110px;
+		background-color: #ecf0f1;
 	}
-	#headimg h1 {
+	.custom-header .site-branding {
+		background-color: rgba(236, 240, 241, .5);
 	}
-	#headimg h1 a {
+	.custom-header .site-branding:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 110px;
 	}
-	#desc {
+	.site-title {
+		font-weight: 200;
+		font-size: 36px;
+		line-height: 220px;
 	}
-	#headimg img {
+	.site-title a {
+		text-decoration: none;
 	}
 	</style>
 <?php
@@ -158,19 +200,25 @@ if ( ! function_exists( 'flounder_admin_header_image' ) ) :
  * @see flounder_custom_header_setup().
  */
 function flounder_admin_header_image() { ?>
-	<div id="headimg">
-		<?php
-		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
-			$style = ' style="display:none;"';
-		else
-			$style = ' style="color:#' . get_header_textcolor() . ';"';
-		?>
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php $header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
-			<img src="<?php echo esc_url( $header_image ); ?>" alt="" />
-		<?php endif; ?>
+	<?php
+	if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
+		$style = ' style="display:none;"';
+	else
+		$style = ' style="color:#' . get_header_textcolor() . ';"';
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) : ?>
+	<style>
+		.custom-header .site-branding:before {
+			background-image: url('<?php echo esc_url( $header_image ); ?> ');
+		}
+	</style>
+	<?php endif; ?>
+
+	<div id="headimg" <?php if ( ! empty( $header_image ) ) echo 'class="custom-header"'; ?>>
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"<?php echo $style; ?> onclick="return false;" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		</div>
 	</div>
 <?php }
 endif; // flounder_admin_header_image
+

@@ -37,3 +37,64 @@
 @page: #ecf0f1;
 @page-header: #95a5a6;
 @page-base: #7f8c8d;
+
+/**
+ * Colors Mixin. All post-type specific colors are
+ * defined here. This is assumed to be called on the 
+ * <article> for a post.
+ */
+.colors( @bg, @base ) {
+	& {
+		background: @bg;
+	}
+	button,
+	input[type='submit'],
+	input[type='reset'] {
+		background: @base;
+	}
+	th {
+		background-color: fade( @base, 60% );
+	}
+	td {
+		border-color: fade( @base, 60% );
+		background-color: fade( @base, 15% );
+	}
+	h2,
+	.comment-links,
+	#reply-title {
+		color: @base;
+		.dashicons-plus-big {
+			border-color: @base;
+			background-color: @base;
+		}
+	}
+	.entry-meta {
+		color: saturate( darken( @base, 20% ), 23%);
+		background: @base;
+		.meta {
+			background: desaturate( lighten( @base, 10% ), 10% );
+		}
+	}
+	.entry-header {
+		color: @bg;
+		background: desaturate( lighten( @base, 10% ), 10% );
+		&.entry-meta {
+			color: saturate( darken( @base, 20% ), 23%);
+			.meta {
+				border-right: 2px solid @base;
+			}
+		}
+	}
+	.icon {
+		color: @bg;
+	}
+	.format-icon {
+		color: @base;
+		background: @bg;
+	}
+	#respond {
+		label { color: @base; }
+		textarea { color: @base; }
+		.placeholder( desaturate( lighten( @base, 30% ), 10% ); italic 12px 'Source Sans Pro', sans-serif );
+	}
+}

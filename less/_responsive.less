@@ -1,0 +1,169 @@
+/* @group LARGE SCREEN */
+@media (min-width: 1300px) {
+	#page {
+		max-width: 1240px;
+	}
+	.content-area {
+		float: left;
+		width: 100%;
+		margin: 0;
+	}
+	.site-content {
+		margin: 30px 22.58065% 0;
+	}
+	.site-header {
+		float: left;
+		margin-right: -100%;
+		width: 17.74194%;
+	}
+	.side-widget-area {
+		clear: none;
+		float: right;
+		margin: 30px 0 0 -100%;
+		overflow: hidden;
+		width: 17.74194%;
+	}
+}
+/* @end */
+
+@media (max-width: 1000px) {
+	body {
+		padding: 0 1em;
+	}
+	.site-header,
+	.side-widget-area {
+		min-width: 220px;
+	}
+	.content-area {
+		margin-left: -220px;
+	}
+	.site-content {
+		margin-left: 250px;
+	}
+	.entry-area {
+		margin-right: -180px;
+	}
+	.entry-header,
+	.entry-content,
+	.entry-summary,
+	.comment-links,
+	.comments-area {
+		margin-right: 180px;
+	}
+	.sidebar-bg,
+	footer.entry-meta {
+		width: 180px;
+	}
+}
+
+@media (max-width: 900px) {
+	.entry-area {
+		margin-right: -140px;
+	}
+	.entry-header,
+	.entry-content,
+	.entry-summary,
+	.comment-links,
+	.comments-area {
+		margin-right: 140px;
+	}
+	.sidebar-bg,
+	footer.entry-meta {
+		width: 140px;
+	}
+}
+
+@media (max-width: 770px) {
+	.site-header {
+		float: none;
+		width: 100%;
+		.site-branding {
+			position: relative;
+			float: left;
+			height: 180px;
+			width: 180px;
+		}
+		.site-title {
+			line-height: 180px;
+		}
+		nav {
+			float: right;
+			margin: 30px 0 0 -180px;
+			width: 100%;
+			font-size: .9em;
+			.menu-main-nav-container {
+				margin: 0 0px 0 210px;
+			}
+			a {
+				padding: 10px 0;
+			}
+			li:first-child a {
+				padding-top: 0;
+			}
+		}
+	}
+	.side-widget-area {
+		float: none;
+		width: 100%;
+	}
+	.content-area {
+		margin-left: 0;
+	}
+	.site-content {
+		margin: 0;
+	}
+}
+
+@media (max-width: 500px) {
+	html {
+		font-size: 50%;
+	}
+	.site-header {
+		float: none;
+		width: 100%;
+		.site-branding {
+			float: none;
+		}
+		nav {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	body {
+		border-top: 5px solid orange;
+	}
+	.entry-area {
+		float: none;
+		margin-right: 0px;
+	}
+	.entry-header,
+	.entry-content,
+	.entry-summary,
+	.comment-links,
+	.comments-area {
+		margin-right: 0px;
+	}
+	.sidebar-bg {
+		display: none;
+	}
+	footer.entry-meta {
+		float: none;
+		width: 100%;
+	}
+	.format-icon {
+		margin: 15px auto;
+		height: 80px;
+		width: 80px;
+		.border-radius(40px);
+		font-size: 40px;
+		line-height: 80px;
+	}
+	footer.entry-meta {
+		padding-bottom: 15px;
+		.no-title & {
+			padding-bottom: 0;
+		}
+	}
+}

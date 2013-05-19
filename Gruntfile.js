@@ -28,8 +28,10 @@ module.exports = function(grunt) {
         options: { 
           yuicompress: true 
         },
-        src: [ 'less/*.less', '!less/_*.less' ],
-        dest: 'style.css'
+        files: {
+        	'style.css': [ 'less/*.less', '!less/_*.less' ],
+        	'css/editor.css': 'less/editor.less'
+        }
       }
     },
     watch: {

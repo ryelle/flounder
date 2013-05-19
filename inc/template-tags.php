@@ -27,7 +27,7 @@ function flounder_content_nav( $nav_id ) {
 	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
 		return;
 
-	$nav_class = ( is_single() ) ? 'navigation-post' : 'navigation-paging';
+	$nav_class = ( is_single() ) ? 'navigation navigation-post clearfix' : 'navigation navigation-paging clearfix';
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">

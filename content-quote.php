@@ -4,9 +4,9 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'no-title' ); ?>>
 	<div class="entry-area">
-		<header class="entry-header entry-meta">
+		<header class="entry-header clearfix entry-meta">
 			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
 				<?php flounder_posted_on(); ?>
 			</a>
@@ -25,7 +25,7 @@
 			if ( comments_open() || '0' != get_comments_number() )
 				comments_template();
 		} else {
-			flounder_comment_link( '<div class="comment-links">', '</div>' ); 
+			flounder_comment_link( '<div class="comment-links clearfix">', '</div>' ); 
 		} ?>
 
 	</div><!-- .entry-area -->

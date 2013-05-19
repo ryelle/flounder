@@ -75,6 +75,12 @@ function flounder_setup() {
 	 * Add an image size that does not exceed content width
 	 */
 	add_image_size( 'feature', 500 );
+
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, and column width.
+	 */
+	add_editor_style( 'css/editor.css' );
 }
 endif; // flounder_setup
 add_action( 'after_setup_theme', 'flounder_setup' );
@@ -98,7 +104,6 @@ add_action( 'widgets_init', 'flounder_widgets_init' );
  * Enqueue scripts and styles
  */
 function flounder_scripts() {
-	wp_enqueue_style( 'flounder-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,200italic,400italic,600italic' );
 	wp_enqueue_style( 'dashicons', get_template_directory_uri().'/assets/fonts/dashicons.css' );
 	wp_enqueue_style( 'flounder-style', get_stylesheet_uri() );
 
@@ -113,6 +118,88 @@ function flounder_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'flounder_scripts' );
+
+
+/**
+ * Returns the Google font stylesheet URL, if available.
+ *
+ * The use of Source Sans Pro by default is localized. For languages
+ * that use characters not supported by the font, the font can be disabled.
+ *
+ * @since Flounder 1.0
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function flounder_fonts_url() {
+	$fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	 * supported by Source Sans Pro, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'flounder' );
+
+	if ( 'off' !== $source_sans_pro || 'off' !== $bitter ) {
+		$font_families = array();
+
+		if ( 'off' !== $source_sans_pro )
+			$font_families[] = 'Source+Sans+Pro:200,400,600,200italic,400italic,600italic';
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => implode( '|', $font_families ),
+			'subset' => 'latin,latin-ext',
+		);
+		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
+}
+
+/**
+ * Loads our special font CSS file.
+ *
+ * To disable in a child theme, use wp_dequeue_style()
+ * function mytheme_dequeue_fonts() {
+ *     wp_dequeue_style( 'flounder-fonts' );
+ * }
+ * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
+ *
+ * @since Flounder 1.0
+ *
+ * @return void
+ */
+function flounder_fonts() {
+	$fonts_url = flounder_fonts_url();
+	if ( ! empty( $fonts_url ) )
+		wp_enqueue_style( 'flounder-fonts', esc_url_raw( $fonts_url ), array(), null );
+}
+add_action( 'wp_enqueue_scripts', 'flounder_fonts' );
+
+/**
+ * Adds additional stylesheets to the TinyMCE editor if needed.
+ *
+ * @uses flounder_fonts_url() to get the Google Font stylesheet URL.
+ *
+ * @since Flounder 1.0
+ *
+ * @param string $mce_css CSS path to load in TinyMCE.
+ * @return string
+ */
+function flounder_mce_css( $mce_css ) {
+	$fonts_url = flounder_fonts_url();
+
+	if ( empty( $fonts_url ) )
+		return $mce_css;
+
+	if ( ! empty( $mce_css ) )
+		$mce_css .= ',';
+
+	$mce_css .= esc_url_raw( str_replace( ',', '%2C', $fonts_url ) );
+
+	return $mce_css;
+}
+add_filter( 'mce_css', 'flounder_mce_css' );
 
 /**
  * Implement the Custom Header feature

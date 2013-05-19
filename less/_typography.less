@@ -18,19 +18,70 @@ h1 {
 	line-height: 1;
 }
 h2 {
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: 18px;
+	font-size: 1.8rem;
 	font-weight: 600;
 	text-transform: uppercase;
 }
-blockquote, q { }
+h3 {
+	font-weight: 200;
+	font-size: 22px;
+	font-size: 2.2rem;
+	line-height: 1;
+}
+h4 {
+	font-weight: 200;
+	font-size: 18px;
+	font-size: 1.8rem;
+	line-height: 1;
+}
+h5 {
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+h6 {
+	font-weight: bold;
+}
 .entry-content {
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: .5em;
 	}
 }
-h3, h4, h5, h6 {
-	font-weight: bold;
+
+blockquote {
+	p:first-child {
+		quotes: '"' '"';
+		&:before { content: open-quote }
+	}
+	p:last-child { 
+		quotes: '"' '"';
+		&:after { content: close-quote }
+	}
+}
+q {
+	quotes: '"' '"';
+	&:before { content: open-quote }
+	&:after { content: close-quote }
+}
+
+table {
+	width: 100%;
+	td, th { 
+		padding: 2px 5px;
+	}
+	th {
+		.small-caps;
+		font-weight: 400;
+	}
+	td {
+		border-style: solid;
+		border-width: 0 0 1px 1px;
+	}
+	td:last-child {
+		border-right-width: 1px;
+	}
 }
 
 .wp-caption {
