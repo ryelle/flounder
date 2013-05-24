@@ -160,6 +160,10 @@ function flounder_comment_link( $before = '', $after = '', $echo = true ) {
 }
 endif;
 
+/**
+ * @todo: Not exactly the most useful filter now that everything's
+ *  all separate, so perhaps we change that?
+ */
 function flounder_show_title() {
 	$show_title = ( ! post_type_supports( get_post_type(), 'post-formats' ) ) || ! (
 		has_post_format( 'link' ) ||
