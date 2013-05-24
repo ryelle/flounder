@@ -416,7 +416,7 @@ article.comment {
 	font-size: 14px;
 	font-size: 1.4rem;
 	color: #f0fffc;
-	background: @bg;
+	.divet( left, @bg );
 	footer {
 		font-size: 12px;
 		font-size: 1.2rem;
@@ -428,7 +428,6 @@ article.comment {
 	margin-left: -105px;
 	margin-bottom: -65px;
 	width: 90px;
-	background: url('assets/arrow-left.png') no-repeat right 35px;
 	img {
 		display: block;
 		.border-radius(33px);
@@ -437,12 +436,11 @@ article.comment {
 li.comment li.comment {
 	article.comment {
 		margin: 15px 90px 15px 0px;
-		background: lighten( @bg, 16% );
+		.divet( right, lighten( @bg, 16% ) );
 	}
 	.comment-avatar {
 		float: right;
 		margin: 0 -105px 0 0;
-		background: url('assets/arrow-right.png') no-repeat left 35px;
 		img {
 			display: block;
 			float: right;
