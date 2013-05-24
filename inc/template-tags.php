@@ -144,13 +144,16 @@ function flounder_posted_by() {
 endif;
 
 if ( ! function_exists( 'flounder_comment_link' ) ) :
+/**
+ * @todo: i18n these strings
+ */
 function flounder_comment_link( $before = '', $after = '', $echo = true ) {
 	if ( ! comments_open() ) return;
 	ob_start();
 	if ( ! empty( $before ) )
 		echo $before;
 	comments_popup_link( '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'No comments', 'flounder' ), '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'Read 1 Comment', 'flounder' ), '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'Read % Comments', 'flounder' ), 'read alignleft', '' );
-	echo '<a href="#" class="add alignright"><i class="icon dashicons dashicons-plus-big"></i>Add a comment</a>';
+	printf( '<a href="%s" class="add alignright"><i class="icon dashicons dashicons-plus-big"></i>Add a comment</a>', get_permalink() . '#respond' );
 	if ( ! empty( $after ) )
 		echo $after;
 	if ( $echo ) 
