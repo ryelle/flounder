@@ -111,4 +111,7 @@ function flounder_comment_form_after() {
 add_action( 'comment_form_logged_in_after', 'flounder_comment_form_after' );
 add_action( 'comment_form_after_fields', 'flounder_comment_form_after' );
 
-
+function flounder_jetpack_comment_wrap( $str ) {
+	return "<div id='jetpack-subscribe'>$str</div>";
+}
+add_filter( 'jetpack_comment_subscription_form', 'flounder_jetpack_comment_wrap' );
