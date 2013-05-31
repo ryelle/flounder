@@ -7,16 +7,20 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-area">
 		<?php if ( flounder_show_title() ) : ?>
+
 		<header class="entry-header">
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		</header><!-- .entry-header -->
+
 		<?php else: ?>
+
 		<header class="entry-header clearfix entry-meta">
 			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
 				<?php flounder_posted_on(); ?>
 			</a>
 			<?php flounder_posted_by(); ?>
 		</header><!-- .entry-header -->
+
 		<?php endif; ?>
 	
 		<div class="entry-content">
