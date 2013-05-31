@@ -20,6 +20,16 @@
 		<?php endif; ?>
 	
 		<div class="entry-content">
+			<?php if ( has_post_thumbnail() ): ?>
+				<div class="entry-image"><?php
+					the_post_thumbnail( 'feature' ); 
+
+					$thumb_id = get_post_thumbnail_id();
+					$thumb_post = get_post( $thumb_id );
+					if ( $thumb_post && $thumb_post->post_excerpt )
+						printf( '<div class="wp-caption-text">%s</div>', $thumb_post->post_excerpt );
+				?></div>
+			<?php endif; ?>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'flounder' ) ); ?>
 			<?php
 				wp_link_pages( array(
