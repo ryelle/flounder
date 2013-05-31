@@ -79,7 +79,7 @@ function flounder_gallery_atts( $atts ) {
 add_filter( 'shortcode_atts_gallery', 'flounder_gallery_atts' );
 
 /**
- * Unset the website field
+ * Unset the website field, Remove the required *
  */
 function flounder_comment_fields( $fields ){
 	unset( $fields['url'] );
