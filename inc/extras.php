@@ -79,21 +79,6 @@ function flounder_gallery_atts( $atts ) {
 add_filter( 'shortcode_atts_gallery', 'flounder_gallery_atts' );
 
 /**
- * Parse chat data if we're a chat format
- *
- * @since Flounder 1.0
- *
- * @param string $content Filtered post content
- * @return string
- */
-function flounder_parse_chat( $content ) {
-	if ( ! has_post_format( 'chat' ) ) return $content;
-	$content = "CHAATTT";
-	return $content;
-}
-add_filter( 'the_content', 'flounder_parse_chat', 99 );
-
-/**
  * Unset the website field, Remove the required *
  */
 function flounder_comment_fields( $fields ){
