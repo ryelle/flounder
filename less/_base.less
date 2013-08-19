@@ -12,6 +12,12 @@ and Blueprint http://www.blueprintcss.org/
 
 /* =Global
 ----------------------------------------------- */
+
+* {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -248,7 +254,8 @@ textarea {
 	display: block;
 	max-width: 100%;
 }
-.site-content .gallery {
+.site-content .gallery,
+.site-content .tiled-gallery {
 	margin-bottom: 1.5em;
 }
 .site-content .gallery img {
