@@ -174,6 +174,9 @@ function flounder_show_title() {
 		has_post_format( 'aside' ) ||
 		has_post_format( 'status' )
 	);
+
+	if ( is_singular() )
+		$show_title = true;
 	
 	return apply_filters( 'flounder_show_title', $show_title );
 }
