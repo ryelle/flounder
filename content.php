@@ -80,6 +80,8 @@
 				<?php echo $tags_list; ?>
 			</div>
 			<?php endif; // End if $tags_list ?>
+
+			<?php edit_post_link( __('Edit This'), '<div class="meta edit-link">', '</div>' ); ?> 
 		<?php endif; // End if flounder_show_title ?>
 	
 	</footer><!-- .entry-meta -->
