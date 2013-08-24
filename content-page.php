@@ -20,6 +20,7 @@
 					'after'  => '</div>',
 				) );
 			?>
+			<?php edit_post_link( __('Edit This'), '<p class"edit-link">', '</p>' ); ?> 
 		</div><!-- .entry-content -->
 		
 		<?php
