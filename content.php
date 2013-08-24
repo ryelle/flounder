@@ -9,13 +9,13 @@
 		<?php if ( flounder_show_title() ) : ?>
 
 		<header class="entry-header">
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		</header><!-- .entry-header -->
 
 		<?php else: ?>
 
 		<header class="entry-header clearfix entry-meta">
-			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'flounder' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
 				<?php flounder_posted_on(); ?>
 			</a>
 			<?php flounder_posted_by(); ?>
@@ -57,7 +57,9 @@
 	<footer class="entry-meta">
 		<i class="icon format-icon dashicons dashicons-format-<?php echo ( ''==get_post_format() )? 'standard': get_post_format(); ?>"></i>
 		<?php if ( flounder_show_title() ) : // If we show the title, we need to put meta here. ?>
-			<?php flounder_posted_on(); ?>
+			<a href="<?php the_permalink(); ?>" rel="bookmark">
+				<?php flounder_posted_on(); ?>
+			</a>
 			<?php flounder_posted_by(); ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
