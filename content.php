@@ -19,6 +19,7 @@
 				<?php flounder_posted_on(); ?>
 			</a>
 			<?php flounder_posted_by(); ?>
+			<?php edit_post_link( __('Edit This'), '<div class="meta edit-link">', '</div>' ); ?> 
 		</header><!-- .entry-header -->
 
 		<?php endif; ?>
