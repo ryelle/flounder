@@ -14,33 +14,12 @@ get_header();
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<header class="entry-header">
-					<h1 class="entry-title"><?php the_title(); ?></h1>
+				<div class="entry-area">
+					<header class="entry-header">
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+					</header><!-- .entry-header -->
 
-					<div class="entry-meta">
-						<?php
-							$metadata = wp_get_attachment_metadata();
-							printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'flounder' ),
-								esc_attr( get_the_date( 'c' ) ),
-								esc_html( get_the_date() ),
-								wp_get_attachment_url(),
-								$metadata['width'],
-								$metadata['height'],
-								get_permalink( $post->post_parent ),
-								esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
-								get_the_title( $post->post_parent )
-							);
-						?>
-						<?php edit_post_link( __( 'Edit', 'flounder' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
-					</div><!-- .entry-meta -->
-
-					<nav role="navigation" id="image-navigation" class="navigation-image">
-						<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'flounder' ) ); ?></div>
-						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'flounder' ) ); ?></div>
-					</nav><!-- #image-navigation -->
-				</header><!-- .entry-header -->
-
-				<div class="entry-content">
+					<div class="entry-content">
 
 					<div class="entry-attachment">
 						<div class="attachment">
@@ -97,27 +76,47 @@ get_header();
 						) );
 					?>
 
-				</div><!-- .entry-content -->
-
+					</div><!-- .entry-content -->
+					
+					<?php if ( is_singular() ) {
+						// If comments are open or we have at least one comment, load up the comment template
+						if ( comments_open() || '0' != get_comments_number() )
+							comments_template();
+					} else {
+						flounder_comment_link( '<div class="comment-links clearfix">', '</div>' ); 
+					} ?>
+					
+				</div><!-- .entry-area -->
+				
+				<div class="entry-meta sidebar-bg"></div>
 				<footer class="entry-meta">
-					<?php if ( comments_open() && pings_open() ) : // Comments and trackbacks open ?>
-						<?php printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'flounder' ), get_trackback_url() ); ?>
-					<?php elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open ?>
-						<?php printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'flounder' ), get_trackback_url() ); ?>
-					<?php elseif ( comments_open() && ! pings_open() ) : // Only comments open ?>
-						<?php _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'flounder' ); ?>
-					<?php elseif ( ! comments_open() && ! pings_open() ) : // Comments and trackbacks closed ?>
-						<?php _e( 'Both comments and trackbacks are currently closed.', 'flounder' ); ?>
-					<?php endif; ?>
-					<?php edit_post_link( __( 'Edit', 'flounder' ), ' <span class="edit-link">', '</span>' ); ?>
+					<i class="icon format-icon dashicons dashicons-format-image"></i>
+					<?php flounder_posted_on(); ?>
+					<?php
+						$metadata = wp_get_attachment_metadata();
+						
+						printf( '<div class="meta full-size"><a href="%1$s">%2$s &times; %3$s</a></div>',
+							esc_url( wp_get_attachment_url() ),
+							$metadata['width'],
+							$metadata['height']
+						);
+
+						printf( '<div class="meta parent-post"><a href="%1$s" title="Return to %2$s" rel="gallery">%3$s</a></div>',
+							esc_url( get_permalink( $post->post_parent ) ),
+							esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
+							get_the_title( $post->post_parent )
+						);
+					?>
+
+					<?php edit_post_link( __('Edit This'), '<div class="meta edit-link">', '</div>' ); ?> 
+
 				</footer><!-- .entry-meta -->
 			</article><!-- #post-<?php the_ID(); ?> -->
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() )
-					comments_template();
-			?>
+			
+			<nav role="navigation" id="image-navigation" class="navigation image-navigation">
+				<div class="nav-previous"><?php previous_image_link( false, __( '<i class="icon inline  dashicons dashicons-arr-left"></i> Previous', '_s' ) ); ?></div>
+				<div class="nav-next"><?php next_image_link( false, __( 'Next <i class="icon inline  dashicons dashicons-arr-right"></i>', '_s' ) ); ?></div>
+			</nav><!-- #image-navigation -->
 
 		<?php endwhile; // end of the loop. ?>
 
