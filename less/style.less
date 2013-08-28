@@ -134,12 +134,12 @@ input[type='search'] {
 }
 .widget {
 	.clearlist;
-	padding: 0 15px 15px;
+	padding: 15px 15px 15px;
 	font-size: 14px;
 	font-size: 1.4rem;
 	background: @widget;
 	.widget-title {
-		margin: 0 -15px 10px;
+		margin: -15px -15px 10px;
 		padding: 10px 20px;
 		font-size: 14px;
 		font-size: 1.4rem;
@@ -155,12 +155,17 @@ input[type='search'] {
 	ul {
 		margin: 0 -15px -15px;
 	}
+	&.widget_recent_comments li,
 	li a {
 		display: block;
 		padding: 12px 15px;
 		text-align: center;
 		border-bottom: 2px solid lighten( @widget-header, 15% );
 	}
+	&.widget_recent_comments li a {
+		border-bottom: none;
+	}
+	&.widget_recent_comments li:last-child,
 	li:last-child a {
 		border-bottom: none; 
 	}
