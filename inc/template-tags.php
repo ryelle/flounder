@@ -126,7 +126,8 @@ if ( ! function_exists( 'flounder_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function flounder_posted_on() {
-	printf( '<time class="entry-date meta" datetime="%1$s">%2$s</time>',
+	printf( '<a href="%1$s" rel="bookmark"><time class="entry-date meta" datetime="%2$s">%3$s</time>',
+		get_permalink(),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date( 'n/d/y' ) )
 	);

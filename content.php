@@ -15,9 +15,7 @@
 		<?php else: ?>
 
 		<header class="entry-header clearfix entry-meta">
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
-				<?php flounder_posted_on(); ?>
-			</a>
+			<?php flounder_posted_on(); ?>
 			<?php flounder_posted_by(); ?>
 			<?php edit_post_link( __('Edit This'), '<div class="meta edit-link">', '</div>' ); ?> 
 		</header><!-- .entry-header -->
@@ -58,9 +56,7 @@
 	<footer class="entry-meta">
 		<i class="icon format-icon dashicons dashicons-format-<?php echo ( ''==get_post_format() )? 'standard': get_post_format(); ?>"></i>
 		<?php if ( flounder_show_title() ) : // If we show the title, we need to put meta here. ?>
-			<a href="<?php the_permalink(); ?>" rel="bookmark">
-				<?php flounder_posted_on(); ?>
-			</a>
+			<?php flounder_posted_on(); ?>
 			<?php flounder_posted_by(); ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
