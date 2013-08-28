@@ -450,8 +450,10 @@ article.comment {
 	footer {
 		font-size: 12px;
 		font-size: 1.2rem;
-		color: lighten( @bg, 50% );
 		font-style: italic;
+		&, a {
+			color: lighten( @bg, 50% );
+		}
 	}
 }
 .comment-avatar {
