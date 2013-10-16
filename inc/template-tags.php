@@ -68,7 +68,7 @@ function flounder_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'flounder' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'flounder' ), '<span class="edit-link">', '<span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'flounder' ); ?> <?php comment_author_link(); ?></p>
 	<?php
 			break;
 		default :

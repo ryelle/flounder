@@ -441,7 +441,22 @@ h1, h2, h3 {
 	}
 }
 
-article.comment {
+li.pingback p {
+	margin: 15px 0 15px;
+	padding: 15px;
+	font-size: 14px;
+	font-size: 1.4rem;
+	background-color: @bg;
+	color: lighten( @bg, 50% );
+	a {
+		color: #f0fffc;
+		&:hover, &:focus {
+			color: #c0dfdc;
+		}
+	}
+}
+
+article.comment{
 	margin: 15px 0 15px 90px;
 	padding: 15px;
 	font-size: 14px;
@@ -457,6 +472,9 @@ article.comment {
 		font-style: italic;
 		&, a {
 			color: lighten( @bg, 50% );
+		}
+		a:hover, a:focus {
+			color: lighten( @bg, 35% ); 
 		}
 	}
 }
