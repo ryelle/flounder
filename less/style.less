@@ -243,6 +243,10 @@ input[type='search'] {
 	.small-caps;
 }
 
+.page-links {
+	clear: both;
+}
+
 .navigation {
 	margin-bottom: 30px;
 	.nav-next { float: right; }
@@ -288,14 +292,31 @@ input[type='search'] {
 	}
 }
 
+.gallery {
+	overflow: hidden;
+	margin-bottom: 30px !important;
+}
+
 .format-gallery .gallery {
 	br { display: none; }
-	.gallery-item:nth-child(1),
-	.gallery-item:nth-child(2) {
-		width: 50% !important;
+	&.gallery-columns-1 {
+		.gallery-item img {
+			width: 100%;
+		}
 	}
-	.gallery-item:nth-child(3) {
-		clear: left;
+	&.gallery-columns-2 {
+		br {
+			display: block;
+		}
+	}
+	&.gallery-columns-3 {
+		.gallery-item:nth-child(1),
+		.gallery-item:nth-child(2) {
+			width: 50% !important;
+		}
+		.gallery-item:nth-child(3) {
+			clear: left;
+		}
 	}
 	.wp-caption-text {
 		display: none;
@@ -456,7 +477,7 @@ li.pingback p {
 	}
 }
 
-article.comment{
+article.comment {
 	margin: 15px 0 15px 90px;
 	padding: 15px;
 	font-size: 14px;
@@ -467,6 +488,7 @@ article.comment{
 		color: @bg;
 	}
 	footer {
+		overflow: hidden;
 		font-size: 12px;
 		font-size: 1.2rem;
 		font-style: italic;
