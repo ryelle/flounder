@@ -139,7 +139,7 @@ function flounder_fonts_url() {
 	 */
 	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'flounder' );
 
-	if ( 'off' !== $source_sans_pro || 'off' !== $bitter ) {
+	if ( 'off' !== $source_sans_pro ) {
 		$font_families = array();
 
 		if ( 'off' !== $source_sans_pro )
