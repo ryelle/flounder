@@ -165,8 +165,8 @@ function flounder_comment_link( $before = '', $after = '', $echo = true ) {
 endif;
 
 /**
- * @todo: Not exactly the most useful filter now that everything's
- *  all separate, so perhaps we change that?
+ * Determine if the current post should display a title.
+ * Logic can be overridden by a filter.
  */
 function flounder_show_title() {
 	$show_title = ( ! post_type_supports( get_post_type(), 'post-formats' ) ) || ! (
@@ -181,7 +181,3 @@ function flounder_show_title() {
 	
 	return apply_filters( 'flounder_show_title', $show_title );
 }
-
-
-
-
