@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
 			<article id="post-0" class="post hentry error404 not-found">
@@ -44,6 +44,7 @@ get_header(); ?>
 			</article><!-- #post-0 .post .error404 .not-found -->
 
 		</div><!-- #content -->
-	</div><!-- #primary -->
+	</section><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

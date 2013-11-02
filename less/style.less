@@ -421,12 +421,15 @@ h1, h2, h3 {
 .format-aside {
 	.colors( @aside, @aside-base );
 }
-.type-page,
-.error404,
-.no-results {
+.hentry.type-page,
+.hentry.error404,
+.hentry.no-results {
 	.colors( @page, @page-base );
 	.entry-header {
 		background: @page-header;
+	}
+	.widget-title {
+		color: white;
 	}
 	.format-icon {
 		font-size: 120px;
