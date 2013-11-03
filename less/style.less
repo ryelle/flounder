@@ -111,31 +111,9 @@ input[type='search'] {
 	vertical-align: middle;
 	line-height: 1.2;
 }
-.navigation-main {
-	margin: 0 0 40px;
-	font-size: 18px;
-	font-size: 1.8rem;
-	text-transform: uppercase;
-	text-align: center;
-	color: @header-text;
-	li {
-		padding: 10px 0;
-		border-bottom: 2px solid lighten( @bg, 3% );
-		&:last-child {
-			border-bottom: none;
-		}
-	}
-	a { 
-		display: block;
-		padding: 15px 0;
-		color: @header-text;
-		&:hover { color: darken( @header-text, 25% ); }
-	}
-	.clearlist;
-	.sub-menu:before {
-		content: '↓';
-	}
-}
+
+@import "_menu";
+
 .widget {
 	.clearlist;
 	padding: 15px 15px 15px;

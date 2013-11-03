@@ -14,38 +14,38 @@ jQuery( document ).ready( function( $ ) {
 
 
 } );
-/**
- * navigation.js
- *
- * Handles toggling the navigation menu for small screens.
- */
-( function() {
-	var container = document.getElementById( 'site-navigation' ),
-	    button    = container.getElementsByTagName( 'h1' )[0],
-	    menu      = container.getElementsByTagName( 'ul' )[0];
 
-	if ( undefined == button || undefined == menu )
+/**
+ * Handles toggling the navigation menu & widgets for small screens.
+ */
+( function( $ ) {
+	var container  = document.getElementById( 'page' ),
+	    navIcon    = document.getElementById( 'toggle-nav' ),
+	    widgetIcon = document.getElementById( 'toggle-widgets' );
+
+	// Bail if we don't see a container or nav icon
+	if ( undefined == container || undefined == navIcon )
 		return false;
 
-	button.onclick = function() {
-		if ( -1 == menu.className.indexOf( 'nav-menu' ) )
-			menu.className = 'nav-menu';
-
-		if ( -1 != button.className.indexOf( 'toggled-on' ) ) {
-			button.className = button.className.replace( ' toggled-on', '' );
-			menu.className = menu.className.replace( ' toggled-on', '' );
-			container.className = container.className.replace( 'main-small-navigation', 'navigation-main' );
-		} else {
-			button.className += ' toggled-on';
-			menu.className += ' toggled-on';
-			container.className = container.className.replace( 'navigation-main', 'main-small-navigation' );
-		}
+	// Display/hide navigation
+	navIcon.onclick = function() {
+		$( document.body ).removeClass( 'show-widgets' );
+		$( document.body ).toggleClass( 'show-nav' );
 	};
+	
+	// Display/hide navigation
+	widgetIcon.onclick = function() {
+		$( document.body ).removeClass( 'show-nav' );
+		$( document.body ).toggleClass( 'show-widgets' );
+	};
+} )( jQuery );
 
-	// Hide menu toggle button if menu is empty.
-	if ( ! menu.childNodes.length )
-		button.style.display = 'none';
-} )();
+/**
+ * Makes "skip to content" link work correctly in IE9 and Chrome for better
+ * accessibility.
+ *
+ * @link http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+ */
 ( function() {
 	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
 	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
