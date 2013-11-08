@@ -25,9 +25,6 @@ module.exports = function(grunt) {
     },
     less: {
       dist: {
-        options: { 
-          yuicompress: true 
-        },
         files: {
         	'style.css': [ 'less/*.less', '!less/editor.less', '!less/_*.less' ],
         	'editor-style.css': 'less/editor.less'

@@ -14,7 +14,6 @@ jQuery( document ).ready( function( $ ) {
 
 
 } );
-
 /**
  * Handles toggling the navigation menu & widgets for small screens.
  */
@@ -39,7 +38,6 @@ jQuery( document ).ready( function( $ ) {
 		$( document.body ).toggleClass( 'show-widgets' );
 	};
 } )( jQuery );
-
 /**
  * Makes "skip to content" link work correctly in IE9 and Chrome for better
  * accessibility.

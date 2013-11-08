@@ -1,3 +1,9 @@
+/**
+ * Makes "skip to content" link work correctly in IE9 and Chrome for better
+ * accessibility.
+ *
+ * @link http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
+ */
 ( function() {
 	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
 	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
