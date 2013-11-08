@@ -1,11 +1,13 @@
 /*! 
  * Theme Name: Flounder
- * Theme URI: 
+ * Theme URI: http://themes.redradar.net/flounder
  * Author: Kelly Dwan & Mel Choyce
+ * Author URI: http://redradar.net
  * Description: Bloggy Theme! 
  * Version: 0.1.0
  * License: GNU General Public License 
  * License URI: license.txt 
+ * Tags: 
  */
 
 @import '_reset';
@@ -221,6 +223,8 @@ input[type='search'] {
 	.small-caps;
 }
 
+.bypostauthor { /*! Not used in this theme */ }
+
 .page-links {
 	clear: both;
 }
@@ -275,6 +279,15 @@ input[type='search'] {
 	margin-bottom: 30px !important;
 }
 
+.format-image {
+	.wp-caption {
+		background: lighten( @image-base, 15% );
+	}
+	.wp-caption-text {
+		color: saturate( darken( @image-base, 20% ), 23%);
+	}
+}
+
 .format-gallery .gallery {
 	br { display: none; }
 	&.gallery-columns-1 {
@@ -296,7 +309,8 @@ input[type='search'] {
 			clear: left;
 		}
 	}
-	.wp-caption-text {
+	.wp-caption-text,
+	.gallery-caption {
 		display: none;
 		margin: 0 5px !important;
 		padding: 10px 5px;
@@ -415,6 +429,7 @@ h1, h2, h3 {
 		background: transparent;
 	}
 }
+.sticky { /*! Not styled in this theme. */ }
 /* @end */
 
 /* @group COMMENTS */
