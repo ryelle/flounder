@@ -84,18 +84,20 @@ function flounder_comment( $comment, $args, $depth ) {
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 					<?php 
 					// Older than a week, show date; otherwise show __ time ago.
-					if ( current_time('timestamp') - get_comment_time( 'U' ) > 604800 )
+					if ( current_time( 'timestamp' ) - get_comment_time( 'U' ) > 604800 ) {
 						$time = sprintf( _x( '%1$s at %2$s', '1: date, 2: time', 'flounder' ), get_comment_date(), get_comment_time() );
-					else
-						$time = sprintf( __( '%1$s ago', 'flounder' ), human_time_diff( get_comment_time( 'U' ), current_time('timestamp') ) );
-					printf( __( 'posted %1$s by %2$s', 'flounder' ), 
+					} else {
+						$time = sprintf( __( '%1$s ago', 'flounder' ), human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) );
+					}
+					printf(
+						__( 'posted %1$s by %2$s', 'flounder' ), 
 						'<time datetime="'. get_comment_time( 'c' ) .'">'. $time .'</time>',
 						sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) 
 					); ?>
 					</a>
 					<?php
 						if ( $comment->comment_parent ) {
-							printf ( 
+							printf(
 								'<a href="%1$s">%2$s</a>',
 								esc_url( get_comment_link( $comment->comment_parent ) ),
 								sprintf( __( 'in reply to %s', 'flounder' ), get_comment_author( $comment->comment_parent ) )
@@ -126,7 +128,8 @@ if ( ! function_exists( 'flounder_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function flounder_posted_on() {
-	printf( '<a href="%1$s" rel="bookmark"><time class="entry-date meta" datetime="%2$s">%3$s</time>',
+	printf(
+		'<a href="%1$s" rel="bookmark"><time class="entry-date meta" datetime="%2$s">%3$s</time>',
 		get_permalink(),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date( 'n/d/y' ) )
@@ -136,7 +139,8 @@ endif;
 
 if ( ! function_exists( 'flounder_posted_by' ) ) :
 function flounder_posted_by() {
-	printf( '<div class="author meta vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></div>',
+	printf(
+		'<div class="author meta vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></div>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'flounder' ), get_the_author() ) ),
 		get_the_author()
@@ -146,7 +150,7 @@ endif;
 
 if ( ! function_exists( 'flounder_comment_link' ) ) :
 /**
- * @todo: i18n these strings
+ * Generate the comment links
  */
 function flounder_comment_link( $before = '', $after = '', $echo = true ) {
 	if ( ! comments_open() ) return;
@@ -154,13 +158,14 @@ function flounder_comment_link( $before = '', $after = '', $echo = true ) {
 	if ( ! empty( $before ) )
 		echo $before;
 	comments_popup_link( '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'No comments', 'flounder' ), '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'Read 1 Comment', 'flounder' ), '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'Read % Comments', 'flounder' ), 'read alignleft', '' );
-	printf( '<a href="%s" class="add alignright"><i class="icon dashicons dashicons-plus-big"></i>Add a comment</a>', get_permalink() . '#respond' );
+	printf( '<a href="%s" class="add alignright"><i class="icon dashicons dashicons-plus-big"></i>%s</a>', get_permalink() . '#respond', __( 'Add a comment', 'flounder' ) );
 	if ( ! empty( $after ) )
 		echo $after;
-	if ( $echo ) 
+	if ( $echo ) {
 		ob_end_flush();
-	else 
+	} else {
 		return ob_end_clean();
+	}
 }
 endif;
 

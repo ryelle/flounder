@@ -10,11 +10,6 @@
  * Setup the WordPress core custom header feature.
  *
  * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for previous versions.
- * Use feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
- * @todo Rework this function to remove WordPress 3.4 support when WordPress 3.6 is released.
  *
  * @uses flounder_header_style()
  * @uses flounder_admin_header_style()
