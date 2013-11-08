@@ -24,8 +24,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php if ( has_nav_menu( 'primary' ) ): ?>
 <div class="menu-toggle nav icon dashicons dashicons-menu" id="toggle-nav"></div>
+<?php endif; ?>
+<?php if ( is_active_sidebar( 'sidebar-1' ) ): ?>
 <div class="menu-toggle widgets icon dashicons dashicons-screenoptions" id="toggle-widgets"></div>
+<?php endif; ?>
 
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
