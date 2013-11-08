@@ -108,7 +108,7 @@ get_header();
 						);
 					?>
 
-					<?php edit_post_link( __('Edit This'), '<div class="meta edit-link">', '</div>' ); ?> 
+					<?php edit_post_link( __( 'Edit This', 'flounder' ), '<div class="meta edit-link">', '</div>' ); ?> 
 
 				</footer><!-- .entry-meta -->
 			</article><!-- #post-<?php the_ID(); ?> -->

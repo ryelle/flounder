@@ -74,7 +74,7 @@ if ( post_password_required() )
 		'comment_notes_after' => '',
 		'title_reply' => '<i class="icon dashicons dashicons-plus-big"></i>'.__( 'Leave a Reply' ),
 		'title_reply_to' => '<i class="icon dashicons dashicons-plus-big"></i>'.__( 'Leave a Reply to %s' ),
-		'comment_field' => '<p class="comment-form-comment clearfix"><label class="screen-reader-text" for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="3" aria-required="true" placeholder="'. __( 'Enter your comment here&hellip;', 'flounder' ) .'"></textarea></p>',
+		'comment_field' => '<p class="comment-form-comment clearfix"><label class="screen-reader-text" for="comment">' . _x( 'Comment', 'noun', 'flounder' ) . '</label><textarea id="comment" name="comment" cols="45" rows="3" aria-required="true" placeholder="'. __( 'Enter your comment here&hellip;', 'flounder' ) .'"></textarea></p>',
 	) ); ?>
 
 </div><!-- #comments -->

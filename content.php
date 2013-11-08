@@ -17,7 +17,7 @@
 		<header class="entry-header clearfix entry-meta">
 			<?php flounder_posted_on(); ?>
 			<?php flounder_posted_by(); ?>
-			<?php edit_post_link( __('Edit This'), '<div class="meta edit-link">', '</div>' ); ?> 
+			<?php edit_post_link( __( 'Edit This', 'flounder' ), '<div class="meta edit-link">', '</div>' ); ?> 
 		</header><!-- .entry-header -->
 
 		<?php endif; ?>
@@ -78,7 +78,7 @@
 			</div>
 			<?php endif; // End if $tags_list ?>
 
-			<?php edit_post_link( __('Edit This'), '<div class="meta edit-link">', '</div>' ); ?> 
+			<?php edit_post_link( __( 'Edit This', 'flounder' ), '<div class="meta edit-link">', '</div>' ); ?> 
 		<?php endif; // End if flounder_show_title ?>
 	
 	</footer><!-- .entry-meta -->
