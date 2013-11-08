@@ -288,6 +288,12 @@ input[type='search'] {
 	}
 }
 
+.format-gallery .entry-image {
+	background: lighten( @gallery-base, 15% );
+	.wp-caption-text {
+		color: saturate( darken( @gallery-base, 20% ), 23%);
+	}
+}
 .format-gallery .gallery {
 	br { display: none; }
 	&.gallery-columns-1 {
