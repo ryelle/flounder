@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         },
         files: {
         	'style.css': [ 'less/*.less', '!less/editor.less', '!less/_*.less' ],
-        	'css/editor.css': 'less/editor.less'
+        	'editor-style.css': 'less/editor.less'
         }
       }
     },

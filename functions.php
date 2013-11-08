@@ -80,7 +80,7 @@ function flounder_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, and column width.
 	 */
-	add_editor_style( 'css/editor.css' );
+	add_editor_style();
 }
 endif; // flounder_setup
 add_action( 'after_setup_theme', 'flounder_setup' );
