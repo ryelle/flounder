@@ -1,11 +1,11 @@
 Flounder
 ============
 
-Flounder is a flat, minimally styled theme for bloggers. 
+Flounder is a flat, minimally styled theme for bloggers which features colorful support for post formats and a clean, responsive layout.
 
 ###Post Format Support
 
-[Blah]
+Flounder supports all currently available post formats, drawing on colors and iconography to set each apart.
 
 ###Responsive Design
 
@@ -13,4 +13,4 @@ Flounder is fully responsive, working well on everything from your phone to your
 
 ###Jetpack enabled
 
-Flounder is designed to work seamlessly with many of Jetpack's popular features: infinite scroll, gallery support, and [Blah]
+Flounder is designed to work seamlessly with many of Jetpack's popular features such as infinite scroll and enhanced gallery support.
