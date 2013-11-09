@@ -14,15 +14,6 @@ module.exports = function(grunt) {
         files: { 'js/<%= pkg.slug %>.js': 'js/src/**/*.js' }
       }
     },
-    uglify: {
-      options: {
-        banner: '<%= meta.banner %>',
-        report: 'min' // Shows how well it compressed in the CLI
-      },
-      dist: {
-        files: { 'js/<%= pkg.slug %>.min.js': 'js/<%= pkg.slug %>.js' }
-      }
-    },
     less: {
       dist: {
         files: {
@@ -34,7 +25,7 @@ module.exports = function(grunt) {
     watch: {
       javascript: {
         files: ['js/src/**/*.js'],
-        tasks: ['concat', 'uglify']
+        tasks: ['concat']
       },
       less: {
         files: ['less/*.less'],
@@ -44,12 +35,11 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['concat', 'uglify', 'less']);
+  grunt.registerTask('default', ['concat', 'less']);
 
 
 };
