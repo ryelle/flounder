@@ -136,6 +136,26 @@
 			display: none;
 		}
 	}
+	
+	article.comment {
+		margin: 95px 0 15px;
+		.divet( top, @bg );
+	}
+	.comment-avatar {
+		margin: -95px 0 24px -15px;
+	}
+	li.comment li.comment {
+		article.comment {
+			margin: 95px 0 15px;
+			.divet( top, lighten( @bg, 16% ) );
+		}
+		.comment-avatar {
+			float: none;
+			margin: -95px 0 24px -15px;
+			
+			img { float: left; }
+		}
+	}
 }
 /* @end */
 

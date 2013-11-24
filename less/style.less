@@ -396,7 +396,9 @@ h1, h2, h3 {
 	.comment-list {
 		margin: 0 0 50px;
 		padding: 0;
-		list-style: none;
+		li {
+			list-style: none;
+		}
 	}
 }
 
@@ -462,6 +464,10 @@ li.comment li.comment {
 			.border-radius(33px);
 		}
 	}
+}
+#comments .comment-content {
+	ol li { list-style: decimal; }
+	ul li { list-style: disc; }
 }
 
 #reply-title {

@@ -60,6 +60,15 @@
     border-width: 10px 0px 10px 10px;
   }
 }
+.divet( top, @color ) {
+  &:after {
+    top: -10px;
+    left: 22px;
+    right: auto;
+    border-width: 0 10px 10px;
+    border-color: @color transparent;
+  }
+}
 
 
 // Clearfix
