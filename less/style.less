@@ -115,72 +115,8 @@ input[type='search'] {
 }
 
 @import "_menu";
+@import "_widgets";
 
-.widget {
-	.clearlist;
-	padding: 15px 15px 15px;
-	font-size: 14px;
-	font-size: 1.4rem;
-	background: @widget;
-	.widget-title {
-		margin: -15px -15px 10px;
-		padding: 10px 20px;
-		font-size: 14px;
-		font-size: 1.4rem;
-		.small-caps;
-		color: white;
-		text-align: center;
-		background: @widget-header;
-	}
-	.widget-title + ul,
-	&.widget_nav_menu .widget-title + div ul {
-		margin-top: -10px;
-	}
-	ul {
-		margin: 0 -15px -15px;
-	}
-	&.widget_recent_comments li,
-	li a {
-		display: block;
-		padding: 12px 15px;
-		text-align: center;
-		border-bottom: 2px solid lighten( @widget-header, 15% );
-	}
-	&.widget_recent_comments li a {
-		border-bottom: none;
-	}
-	&.widget_recent_comments li:last-child,
-	li:last-child a {
-		border-bottom: none; 
-	}
-	li ul {
-		margin: 0;
-	}
-	li li:last-child a { 
-		border-bottom: 2px solid lighten( @widget-header, 15% );
-	}
-	table {
-		caption {
-			margin-bottom: 5px;
-			.small-caps;
-			text-align: center;
-		}
-	}
-	#wp-calendar td,
-	#wp-calendar th {
-		text-align: center;
-		border-color: fade( @bg, 25% );
-	}
-	#wp-calendar th {
-		color: white;
-		background: @bg;
-	}
-	#wp-calendar a {
-		display: block;
-		color: white;
-		background: @widget-header;
-	}
-}
 /* @end */
 
 /* @group GENERAL POST STYLE */
