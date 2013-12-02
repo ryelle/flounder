@@ -56,7 +56,8 @@ get_header();
 							?>
 
 							<a href="<?php echo $next_attachment_url; ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
-								$attachment_size = apply_filters( 'flounder_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
+								global $content_width;
+								$attachment_size = apply_filters( 'flounder_attachment_size', array( $content_width, $content_width ) ); // Filterable image size.
 								echo wp_get_attachment_image( $post->ID, $attachment_size );
 							?></a>
 						</div><!-- .attachment -->
