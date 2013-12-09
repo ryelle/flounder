@@ -25,5 +25,13 @@ Dashicons is licensed under GPLv2, or any later version with font exception
 == Changelog
 -------------------------------------------------------------
 
-Version 1.0
+Version 0.2.2
+* Add Russian translation, thanks to Alexander Goncharov
+* Widget style fixes for consistencies across all core widgets
+* Comments don't need bullets, so remove them.
+* Syntax fix, thanks to wormeyman
+* Add custom taxonomy support for term descriptions in taxonomy archive
+* Use $content_width global (defined in functions.php) for attachment image size
+
+Version 0.2.1
 * First public release
