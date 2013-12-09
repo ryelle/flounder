@@ -24,7 +24,6 @@ Dashicons is licensed under GPLv2, or any later version with font exception
 -------------------------------------------------------------
 == Changelog
 -------------------------------------------------------------
-
 Version 0.2.2
 * Add Russian translation, thanks to Alexander Goncharov
 * Respect user-configured date settings
