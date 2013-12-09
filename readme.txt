@@ -27,6 +27,7 @@ Dashicons is licensed under GPLv2, or any later version with font exception
 
 Version 0.2.2
 * Add Russian translation, thanks to Alexander Goncharov
+* Respect user-configured date settings
 * Widget style fixes for consistencies across all core widgets
 * Comments don't need bullets, so remove them
 * Syntax fix, thanks to wormeyman
