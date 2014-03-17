@@ -17,15 +17,15 @@
 		<header class="entry-header clearfix entry-meta">
 			<?php flounder_posted_on(); ?>
 			<?php flounder_posted_by(); ?>
-			<?php edit_post_link( __( 'Edit This', 'flounder' ), '<div class="meta edit-link">', '</div>' ); ?> 
+			<?php edit_post_link( __( 'Edit This', 'flounder' ), '<div class="meta edit-link">', '</div>' ); ?>
 		</header><!-- .entry-header -->
 
 		<?php endif; ?>
-	
+
 		<div class="entry-content">
 			<?php if ( has_post_thumbnail() ): ?>
 				<div class="entry-image"><?php
-					the_post_thumbnail( 'feature' ); 
+					the_post_thumbnail( 'feature' );
 
 					$thumb_id = get_post_thumbnail_id();
 					$thumb_post = get_post( $thumb_id );
@@ -47,7 +47,7 @@
 			if ( comments_open() || '0' != get_comments_number() )
 				comments_template();
 		} else {
-			flounder_comment_link( '<div class="comment-links clearfix">', '</div>' ); 
+			flounder_comment_link( '<div class="comment-links clearfix">', '</div>' );
 		} ?>
 
 	</div><!-- .entry-area -->
@@ -78,8 +78,8 @@
 			</div>
 			<?php endif; // End if $tags_list ?>
 
-			<?php edit_post_link( __( 'Edit This', 'flounder' ), '<div class="meta edit-link">', '</div>' ); ?> 
+			<?php edit_post_link( __( 'Edit This', 'flounder' ), '<div class="meta edit-link">', '</div>' ); ?>
 		<?php endif; // End if flounder_show_title ?>
-	
+
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

@@ -20,15 +20,15 @@
 					'after'  => '</div>',
 				) );
 			?>
-			<?php edit_post_link( __( 'Edit This', 'flounder' ), '<p class="edit-link">', '</p>' ); ?> 
+			<?php edit_post_link( __( 'Edit This', 'flounder' ), '<p class="edit-link">', '</p>' ); ?>
 		</div><!-- .entry-content -->
-		
+
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || '0' != get_comments_number() )
 				comments_template();
 		?>
-		
+
 	</div>
 	<div class="entry-meta sidebar-bg"></div>
 </article><!-- #post-## -->

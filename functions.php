@@ -70,7 +70,7 @@ function flounder_setup() {
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video', 'quote', 'link', 'status' )  );
-	
+
 	/**
 	 * Add an image size that does not exceed content width
 	 */
