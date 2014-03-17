@@ -28,7 +28,7 @@ textarea {
 	color: @bg;
 	.font-base;
 }
-a { 
+a {
 	color: @bg;
 	text-decoration: none;
 	&:hover { color: darken( @bg, 20% ); }
@@ -359,6 +359,9 @@ h1, h2, h3 {
 .hentry.error404,
 .hentry.no-results {
 	.colors( @page, @page-base );
+	.mejs-controls button {
+		background-color: transparent;
+	}
 	.entry-header {
 		background: @page-header;
 	}
