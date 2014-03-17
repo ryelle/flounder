@@ -53,6 +53,7 @@
 	</div><!-- .entry-area -->
 
 	<div class="entry-meta sidebar-bg"></div>
+	<?php if ( 'page' !== get_post_type() ): ?>
 	<footer class="entry-meta">
 		<i class="icon format-icon dashicons dashicons-format-<?php echo ( ''==get_post_format() )? 'standard': get_post_format(); ?>"></i>
 		<?php if ( flounder_show_title() ) : // If we show the title, we need to put meta here. ?>
@@ -82,4 +83,5 @@
 		<?php endif; // End if flounder_show_title ?>
 
 	</footer><!-- .entry-meta -->
+	<?php endif; ?>
 </article><!-- #post-## -->
