@@ -14,6 +14,27 @@ function flounder_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	$wp_customize->add_section( 'flounder_settings', array(
+		'title'       => __('Layout', 'flounder'),
+		'priority'    => 35,
+		'description' => __( "In the classic layout, the sidebar is responsive and moves to the right side if the screen is larger than 1300px wide. You can force it to always stay left by choosing 'Sidebar always on left'", 'museum' ),
+	) );
+
+	$wp_customize->add_setting( 'flounder_layout', array(
+		'default' => 'classic',
+	) );
+
+	$wp_customize->add_control( 'flounder_layout', array(
+		'label'   => 'Site layout',
+		'section' => 'flounder_settings',
+		'type'    => 'select',
+		'choices' => array(
+			'sidebar-classic'     => __( 'Classic (responsive columns)', 'flounder' ),
+			'sidebar-force-left'  => __( 'Sidebar always on left', 'flounder' ),
+		),
+	) );
+
 }
 add_action( 'customize_register', 'flounder_customize_register' );
 

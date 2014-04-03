@@ -17,6 +17,10 @@ function flounder_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Add the sidebar location class
+	$sidebar = get_theme_mod( 'flounder_layout', 'sidebar-classic' );
+	$classes[] = $sidebar;
+
 	return $classes;
 }
 add_filter( 'body_class', 'flounder_body_classes' );
