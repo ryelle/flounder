@@ -167,7 +167,7 @@ function flounder_admin_header_image() { ?>
 
 	<div id="headimg" <?php if ( ! empty( $header_image ) ) echo 'class="custom-header"'; ?>>
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"<?php echo $style; ?> onclick="return false;" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title displaying-header-text"><a id="name" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"<?php echo $style; ?> onclick="return false;" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</div>
 	</div>
 <?php }
