@@ -427,6 +427,16 @@ article.comment {
 	font-size: 1.4rem;
 	color: #f0fffc;
 	.divet( left, @bg );
+	h2 {
+		color: lighten( @bg, 50% );
+	}
+	a {
+		color: lighten( @bg, 50% );
+		text-decoration: underline;
+		&:hover, &:focus {
+			color: lighten( @bg, 35% );
+		}
+	}
 	pre {
 		color: @bg;
 	}
@@ -437,9 +447,7 @@ article.comment {
 		font-style: italic;
 		&, a {
 			color: lighten( @bg, 50% );
-		}
-		a:hover, a:focus {
-			color: lighten( @bg, 35% ); 
+			text-decoration: none;
 		}
 	}
 }
