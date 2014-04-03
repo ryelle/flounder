@@ -12,11 +12,11 @@
 			border-bottom: none;
 		}
 	}
-	a { 
+	a {
 		display: block;
 		padding: 15px 0;
 		color: @header-text;
-		&:hover { color: darken( @header-text, 25% ); }
+		&:hover, &:focus { color: darken( @header-text, 25% ); }
 	}
 	.clearlist;
 	.sub-menu:before {
@@ -38,7 +38,7 @@
 		margin: 20px 20px 0;
 		height: 20px !important;
 		width: 20px !important;
-		
+
 		&:before {
 			font-size:20px;
 			color: @header-text;
@@ -61,7 +61,7 @@
 		}
 	}
 
-	#site-navigation, 
+	#site-navigation,
 	#secondary {
 		position: fixed;
 		display: block;
@@ -73,7 +73,7 @@
 		bottom: 0;
 		left: 0;
 		padding: 60px 0 0;
-		width: 0; 
+		width: 0;
 		min-width: 0;
 		height: 100%;
 

@@ -65,7 +65,7 @@
 		color: @base;
 		a {
 			color: @base;
-			&:hover { color: darken( @base, 10% ); }
+			&:hover, &:focus { color: darken( @base, 10% ); }
 		}
 	}
 	.entry-meta {
@@ -77,7 +77,7 @@
 		}
 		a {
 			color: @text;
-			&:hover { color: darken( @text, 10% ); }
+			&:hover, &:focus { color: darken( @text, 10% ); }
 		}
 	}
 	.entry-header {
@@ -86,7 +86,7 @@
 		background: desaturate( lighten( @base, 10% ), 10% );
 		a {
 			color: @text;
-			&:hover { color: darken( @text, 10% ); }
+			&:hover, &:focus { color: darken( @text, 10% ); }
 		}
 		&.entry-meta {
 			color: saturate( darken( @base, 20% ), 23%);

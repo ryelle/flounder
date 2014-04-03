@@ -43,7 +43,7 @@
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'flounder' ); ?>"><?php _e( 'Skip to content', 'flounder' ); ?></a></div>
 
-			<?php wp_nav_menu( array( 
+			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
 				/* No fallback, we want the menu to be purposefully set. */
 				'fallback_cb' => '__return_false'
