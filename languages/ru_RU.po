@@ -123,15 +123,15 @@ msgid "Skip to content"
 msgstr "Перейти к содержимому"
 
 #: image.php:117
-msgid "<i class=\"icon inline  dashicons dashicons-arr-left\"></i> Previous"
+msgid "<i class=\"icon inline  dashicons dashicons-arrow-left\"></i> Previous"
 msgstr ""
-"<i class=\"icon inline  dashicons dashicons-arr-left\"></i> Предыдущее "
+"<i class=\"icon inline  dashicons dashicons-arrow-left\"></i> Предыдущее "
 "изображение"
 
 #: image.php:118
-msgid "Next <i class=\"icon inline  dashicons dashicons-arr-right\"></i>"
+msgid "Next <i class=\"icon inline  dashicons dashicons-arrow-right\"></i>"
 msgstr ""
-"Следующее изображение <i class=\"icon inline  dashicons dashicons-arr-right"
+"Следующее изображение <i class=\"icon inline  dashicons dashicons-arrow-right"
 "\"></i>"
 
 #: no-results.php:14
@@ -176,14 +176,14 @@ msgid "Post navigation"
 msgstr "Навигация"
 
 #: inc/template-tags.php:44
-msgid "<i class=\"icon inline dashicons dashicons-arr-left\"></i> Older posts"
+msgid "<i class=\"icon inline dashicons dashicons-arrow-left\"></i> Older posts"
 msgstr ""
-"<i class=\"icon inline dashicons dashicons-arr-left\"></i> Старые записи"
+"<i class=\"icon inline dashicons dashicons-arrow-left\"></i> Старые записи"
 
 #: inc/template-tags.php:48
-msgid "Newer posts <i class=\"icon inline dashicons dashicons-arr-right\"></i>"
+msgid "Newer posts <i class=\"icon inline dashicons dashicons-arrow-right\"></i>"
 msgstr ""
-"Новые записи <i class=\"icon inline dashicons dashicons-arr-right\"></i>"
+"Новые записи <i class=\"icon inline dashicons dashicons-arrow-right\"></i>"
 
 #: inc/template-tags.php:71
 msgid "Pingback:"

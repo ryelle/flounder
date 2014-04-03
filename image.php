@@ -115,8 +115,8 @@ get_header();
 			</article><!-- #post-<?php the_ID(); ?> -->
 			
 			<nav role="navigation" id="image-navigation" class="navigation image-navigation">
-				<div class="nav-previous"><?php previous_image_link( false, __( '<i class="icon inline  dashicons dashicons-arr-left"></i> Previous', '_s' ) ); ?></div>
-				<div class="nav-next"><?php next_image_link( false, __( 'Next <i class="icon inline  dashicons dashicons-arr-right"></i>', '_s' ) ); ?></div>
+				<div class="nav-previous"><?php previous_image_link( false, __( '<i class="icon inline  dashicons dashicons-arrow-left"></i> Previous', '_s' ) ); ?></div>
+				<div class="nav-next"><?php next_image_link( false, __( 'Next <i class="icon inline  dashicons dashicons-arrow-right"></i>', '_s' ) ); ?></div>
 			</nav><!-- #image-navigation -->
 
 		<?php endwhile; // end of the loop. ?>

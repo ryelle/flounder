@@ -32,7 +32,7 @@ if ( post_password_required() )
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="navigation-comment" role="navigation">
+		<nav id="comment-nav-above" class="navigation-comment clear" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'flounder' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'flounder' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'flounder' ) ); ?></div>
@@ -52,7 +52,7 @@ if ( post_password_required() )
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="navigation-comment" role="navigation">
+		<nav id="comment-nav-below" class="navigation-comment clear" role="navigation">
 			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'flounder' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'flounder' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'flounder' ) ); ?></div>
@@ -72,8 +72,8 @@ if ( post_password_required() )
 		// 'fields' => taken care of by flounder_comment_fields in extras.php
 		'comment_notes_before' => '',
 		'comment_notes_after' => '',
-		'title_reply' => '<i class="icon dashicons dashicons-plus-big"></i>'.__( 'Leave a Reply' ),
-		'title_reply_to' => '<i class="icon dashicons dashicons-plus-big"></i>'.__( 'Leave a Reply to %s' ),
+		'title_reply' => '<i class="icon dashicons dashicons-plus"></i>'.__( 'Leave a Reply' ),
+		'title_reply_to' => '<i class="icon dashicons dashicons-plus"></i>'.__( 'Leave a Reply to %s' ),
 		'comment_field' => '<p class="comment-form-comment clearfix"><label class="screen-reader-text" for="comment">' . _x( 'Comment', 'noun', 'flounder' ) . '</label><textarea id="comment" name="comment" cols="45" rows="3" aria-required="true" placeholder="'. __( 'Enter your comment here&hellip;', 'flounder' ) .'"></textarea></p>',
 	) ); ?>
 

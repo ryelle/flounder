@@ -35,17 +35,17 @@ function flounder_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<i class="icon inline  dashicons dashicons-arr-left"></i> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <i class="icon inline dashicons dashicons-arr-right"></i>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<i class="icon inline  dashicons dashicons-arrow-left"></i> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <i class="icon inline dashicons dashicons-arrow-right"></i>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<i class="icon inline dashicons dashicons-arr-left"></i> Older posts', 'flounder' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( __( '<i class="icon inline dashicons dashicons-arrow-left"></i> Older posts', 'flounder' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="icon inline dashicons dashicons-arr-right"></i>', 'flounder' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="icon inline dashicons dashicons-arrow-right"></i>', 'flounder' ) ); ?></div>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -158,7 +158,7 @@ function flounder_comment_link( $before = '', $after = '', $echo = true ) {
 	if ( ! empty( $before ) )
 		echo $before;
 	comments_popup_link( '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'No comments', 'flounder' ), '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'Read 1 Comment', 'flounder' ), '<i class="icon dashicons dashicons-admin-comments"></i>'.__( 'Read % Comments', 'flounder' ), 'read alignleft', '' );
-	printf( '<a href="%s" class="add alignright"><i class="icon dashicons dashicons-plus-big"></i>%s</a>', get_permalink() . '#respond', __( 'Add a comment', 'flounder' ) );
+	printf( '<a href="%s" class="add alignright"><i class="icon dashicons dashicons-plus"></i>%s</a>', get_permalink() . '#respond', __( 'Add a comment', 'flounder' ) );
 	if ( ! empty( $after ) )
 		echo $after;
 	if ( $echo ) {
