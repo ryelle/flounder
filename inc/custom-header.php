@@ -132,9 +132,13 @@ function flounder_admin_header_style() {
 		border-radius: 110px;
 	}
 	.site-title {
+		display: table-cell;
+		height: 220px;
+		width: 220px;
+		vertical-align: middle;
 		font-weight: 200;
 		font-size: 36px;
-		line-height: 220px;
+		line-height: 1.2;
 	}
 	.site-title a {
 		text-decoration: none;
