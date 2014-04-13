@@ -10,9 +10,9 @@
  * Tags: two-columns, three-columns, left-sidebar, right-sidebar, post-formats, custom-header, featured-images, editor-style, threaded-comments, flexible-width, custom-menu, blue, gray, green, orange, pink, purple, yellow, dark
  */
 
+@import '_mixins';
 @import '_reset';
 @import '_base';
-@import '_mixins';
 @import '_colors';
 @import '_typography';
 @import '_structure';
@@ -41,8 +41,7 @@ a {
 input[type],
 textarea {
 	.box-sizing;
-	font-size: 13px;
-	font-size: 1.3rem;
+	.font-size( 13 );
 	line-height: 1.5;
 	border: 1px solid white;
 	&:focus {
@@ -53,8 +52,7 @@ textarea {
 button,
 input[type='submit'],
 input[type='reset'] {
-	font-size: 13px;
-	font-size: 1.3rem;
+	.font-size( 13 );
 	.small-caps;
 	color: white;
 	border: none;
@@ -126,13 +124,11 @@ input[type='search'] {
 	color: white;
 	background: lighten( desaturate( @bg, 10% ), 15% );
 	.page-title {
-		font-size: 36px;
-		font-size: 3.6rem;
+		.font-size( 36 );
 	}
 	.taxonomy-description {
 		margin: 15px 0 0;
-		font-size: 16px;
-		font-size: 1.6rem;
+		.font-size( 16 );
 		font-weight: 300;
 		font-style: italic;
 		p { margin: 0; }
@@ -154,8 +150,7 @@ input[type='search'] {
 	display: block;
 	margin: 0 0 2px;
 	padding: 15px 30px;
-	font-size: 12px;
-	font-size: 1.2rem;
+	.font-size( 12 );
 	.small-caps;
 }
 
@@ -180,8 +175,7 @@ input[type='search'] {
 	a {
 		display: block;
 		padding: 15px 25px 15px 15px;
-		font-size: 13px;
-		font-size: 1.3rem;
+		.font-size( 13 );
 		line-height: 1;
 		.small-caps;
 		color: @bg;
@@ -197,8 +191,7 @@ input[type='search'] {
 	.nav-previous { float: left; }
 	a {
 		display: block;
-		font-size: 13px;
-		font-size: 1.3rem;
+		.font-size( 13 );
 		line-height: 1;
 		.small-caps;
 		color: @bg;
@@ -304,9 +297,8 @@ input[type='search'] {
 	}
 	.quote-caption {
 		margin: 0 20px;
+		.font-size( 14 );
 		.small-caps;
-		font-size: 14px;
-		font-size: 1.4rem;
 	}
 }
 /* @end */
@@ -401,8 +393,7 @@ h1, h2, h3 {
 
 /* @group COMMENTS */
 .comment-links {
-	font-size: 12px;
-	font-size: 1.2rem;
+	.font-size( 12 );
 	.small-caps;
 	.icon {
 		font-size: 20px;
@@ -430,8 +421,7 @@ h1, h2, h3 {
 li.pingback p {
 	margin: 15px 0 15px;
 	padding: 15px;
-	font-size: 14px;
-	font-size: 1.4rem;
+	.font-size( 14 );
 	background-color: @bg;
 	color: lighten( @bg, 50% );
 	a {
@@ -445,8 +435,7 @@ li.pingback p {
 article.comment {
 	margin: 15px 0 15px 90px;
 	padding: 15px;
-	font-size: 14px;
-	font-size: 1.4rem;
+	.font-size( 14 );
 	color: #f0fffc;
 	.divet( left, @bg );
 	h2 {
@@ -464,8 +453,7 @@ article.comment {
 	}
 	footer {
 		overflow: hidden;
-		font-size: 12px;
-		font-size: 1.2rem;
+		.font-size( 12 );
 		font-style: italic;
 		&, a {
 			color: lighten( @bg, 50% );
@@ -522,8 +510,7 @@ li.comment li.comment {
 	label,
 	.logged-in-as,
 	.must-log-in {
-		font-size: 13px;
-		font-size: 1.3rem;
+		.font-size( 13 );
 		line-height: 1;
 		.small-caps;
 	}
@@ -535,8 +522,7 @@ li.comment li.comment {
 		.box-sizing;
 		padding: 7px;
 		width: 100%;
-		font-size: 12px;
-		font-size: 1.2rem;
+		.font-size( 12 );
 		line-height: 1.2;
 		border: 1px solid darken( white, 10%);
 		&:focus {
@@ -554,8 +540,7 @@ li.comment li.comment {
 	input[type='submit'],
 	input[type='reset'] {
 		width: auto;
-		font-size: 13px;
-		font-size: 1.3rem;
+		.font-size( 13 );
 		border: none;
 	}
 }

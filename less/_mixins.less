@@ -1,8 +1,16 @@
+.font-size( @size-value, @base: 16 ){
+  @rem-value: ( @size-value / @base );
+  @px-value: @size-value;
+  font-size: ~"@{px-value}px";
+  font-size: ~"@{rem-value}rem";
+}
+
 .box-sizing(@n: border-box) {
   -webkit-box-sizing: @n;
   -moz-box-sizing: @n;
   box-sizing: @n;
 }
+
 .clearlist() {
   ol, ul, li {
     margin:0;
