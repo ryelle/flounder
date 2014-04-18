@@ -65,7 +65,7 @@ if ( post_password_required() )
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<h2 class="no-comments"><i class="icon no-bg dashicons dashicons-xit"></i><?php _e( 'Comments are closed.', 'flounder' ); ?></h2>
+		<h2 class="no-comments"><i class="icon no-bg dashicons dashicons-no-alt"></i><?php _e( 'Comments are closed.', 'flounder' ); ?></h2>
 	<?php endif; ?>
 
 	<?php comment_form( array(

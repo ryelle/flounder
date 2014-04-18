@@ -104,7 +104,11 @@ add_action( 'widgets_init', 'flounder_widgets_init' );
  * Enqueue scripts and styles
  */
 function flounder_scripts() {
-	wp_enqueue_style( 'icons', get_template_directory_uri().'/assets/fonts/dashicons.css' );
+	if ( version_compare( $GLOBALS['wp_version'], '3.8-alpha', '>' ) ) {
+		wp_enqueue_style( 'dashicons' );
+	} else {
+		wp_enqueue_style( 'icons', get_template_directory_uri().'/assets/fonts/dashicons.css' );
+	}
 	wp_enqueue_style( 'flounder-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'flounder-js', get_template_directory_uri() . '/js/flounder.js', array( 'jquery' ), null, true );

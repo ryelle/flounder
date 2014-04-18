@@ -12,18 +12,6 @@
 	font-style: normal;
 }
 
-.dashicons {
-	display: block;
-	-webkit-font-smoothing: antialiased;
-	line-height: 1;
-	font-family: 'dashicons';
-	text-decoration: inherit;
-	font-weight: normal;
-	font-style: normal;
-	vertical-align: middle;
-	text-align: center;
-}
-
 
 /* Admin Menu Icons */
 
@@ -91,7 +79,7 @@
 /* Both Admin Menu and Post Formats */
 
 .dashicons-admin-links:before,
-.dashicons-format-link:before {
+.dashicons-format-links:before {
 	content: '\f103';
 }
 

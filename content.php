@@ -55,7 +55,7 @@
 	<div class="entry-meta sidebar-bg"></div>
 	<?php if ( 'page' !== get_post_type() ): ?>
 	<footer class="entry-meta">
-		<i class="icon format-icon dashicons dashicons-format-<?php echo ( ''==get_post_format() )? 'standard': get_post_format(); ?>"></i>
+		<i class="icon format-icon dashicons dashicons-format-<?php echo ( ''==get_post_format() )? 'standard': get_post_format(); if ( 'link' == get_post_format() ) echo ' dashicons-format-links'; ?>"></i>
 		<?php if ( flounder_show_title() ) : // If we show the title, we need to put meta here. ?>
 			<?php flounder_posted_on(); ?>
 			<?php flounder_posted_by(); ?>
