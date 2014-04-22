@@ -24,6 +24,14 @@ Dashicons is licensed under GPLv2, or any later version with font exception
 -------------------------------------------------------------
 == Changelog
 -------------------------------------------------------------
+Version 0.2.3
+* Add an option (in customizer) to force the sidebar to alway stay left
+* Fix the display of pages in search results, see issue #35
+* Allow audio and chat post formats
+* Wrap the entire header image and text in a link, so it still links when there's no text
+* Fix misc style issues: #30, #36, #39
+* Update dashicons and use core's version if we're at 3.8+
+
 Version 0.2.2
 * Add Russian translation, thanks to Alexander Goncharov
 * Respect user-configured date settings
