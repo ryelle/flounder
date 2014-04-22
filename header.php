@@ -41,7 +41,7 @@
 		</a>
 
 		<nav id="site-navigation" class="navigation-main" role="navigation">
-			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'flounder' ); ?>"><?php _e( 'Skip to content', 'flounder' ); ?></a></div>
+			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'flounder' ); ?></a>
 
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
