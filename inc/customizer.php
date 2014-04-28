@@ -23,6 +23,7 @@ function flounder_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'flounder_layout', array(
 		'default' => 'classic',
+		'sanitize_callback' => 'sanitize_key',
 	) );
 
 	$wp_customize->add_control( 'flounder_layout', array(
