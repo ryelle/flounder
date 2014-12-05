@@ -129,7 +129,7 @@ if ( ! function_exists( 'flounder_posted_on' ) ) :
  */
 function flounder_posted_on() {
 	printf(
-		'<a href="%1$s" rel="bookmark"><time class="entry-date meta" datetime="%2$s">%3$s</time>',
+		'<a href="%1$s" rel="bookmark"><time class="entry-date meta" datetime="%2$s">%3$s</time></a>',
 		get_permalink(),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
